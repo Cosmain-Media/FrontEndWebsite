@@ -42,68 +42,68 @@ class SideNavBar extends Component {
                 <div className="side-sticky-menu">
                     <div className="content">
                         <div className="content-body">
-                            <button className="dropdown-btn" id="beauty" onClick={this.navDrop}>Beauty</button>
+                            <div className="dropdown-btn" id="beauty" onClick={this.navDrop}>Beauty</div>
                             {this.state.navDrop.map(function(data, index){
                                  if (index===0 && data ===true) {
                                     return (<ul className="dropdown-container" key={index}>
-                                        <a className="list-item">
-                                            <li>Barber</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Cosmetic Doctor</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Cosmetic Registered Nurse</li>
-                                        </a>
+                                        <div className="list-item">
+                                            <a>Barber</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Cosmetic Doctor</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Cosmetic Registered Nurse</a>
+                                        </div>
                                     </ul>
                                     );
                                 } 
                             })}  
-                            <button className="dropdown-btn" id="wellness" onClick={this.navDrop}>Wellness</button>
+                            <div className="dropdown-btn" id="wellness" onClick={this.navDrop}>Wellness</div>
                             {this.state.navDrop.map(function(data, index){
                                  if (index===1 && data ===true) {
                                     return (<ul className="dropdown-container" key={index}>
-                                        <a className="list-item">
-                                            <li>Acupuncturist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Athletic Trainer</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Chiropractor</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Dietitian</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Fitness Instructor</li>
-                                        </a>
+                                        <div className="list-item">
+                                            <a>Acupuncturist</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Athletic Trainer</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Chiropractor</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Dietitian</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Fitness Instructor</a>
+                                        </div>
                                     </ul>
                                     );
                                 } 
                             })}   
-                            <button className="dropdown-btn" id="popular" onClick={this.navDrop}>Popular Services</button>
+                            <div className="dropdown-btn" id="popular" onClick={this.navDrop}>Popular Services</div>
                             {this.state.navDrop.map(function(data, index){
                                  if (index===2 && data ===true) {
                                     return (<ul className="dropdown-container" key={index}>
-                                        <a className="list-item">
-                                            <li>Traditional Chinese Acupuncturist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Acupuncture</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Balayage</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Body Waxing</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Couples Massage</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Dermal/Cosmetic Filters</li>
-                                        </a>
+                                        <div className="list-item">
+                                            <a>Traditional Chinese Acupuncturist</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Acupuncture</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Balayage</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Body Waxing</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Couples Massage</a>
+                                        </div>
+                                        <div className="list-item">
+                                            <a>Dermal/Cosmetic Filters</a>
+                                        </div>
                                     </ul>
                                     );
                                 } 
