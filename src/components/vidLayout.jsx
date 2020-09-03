@@ -5,7 +5,7 @@ class vidLayout extends Component {
     render () {
         return (
             <div>
-
+                Testing Text
             </div>     
             
         )
