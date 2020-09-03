@@ -15,7 +15,6 @@ class SideNavBar extends Component {
 
     navDrop = (e) => {
         if(e.target.id=="beauty"){
-            toggleNav(1);
         }
         {/*
         if(e.target.id=="beauty"){

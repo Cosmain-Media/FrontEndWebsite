@@ -1,7 +1,13 @@
 :root {
-    --color-primary: grey;
+    --color-primary: #5BBAC7;
 
     --color-grey-light: grey;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
 }
 
 * {
@@ -24,4 +30,5 @@ body {
     font-family: "Opens sans", sans-serif;
     font-weight: 400;
     line-height: 1.6;
+    color: var(--color-grey-dark-2);
 }
