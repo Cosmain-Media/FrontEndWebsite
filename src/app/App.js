@@ -4,12 +4,12 @@ import './App.css';
 import {Route, Switch} from 'react-router-dom'
 import HomePage from '../pages/homepage'
 import Test from '../pages/test'
-import Nav from'.components/nav'
+import Nav from '.components/nav'
 
 function App() {
   return (
     <div>
-      <nav/>
+      <Nav/>
       <Switch>
         <Route exact path="/" render={ () => 
           <HomePage/>
