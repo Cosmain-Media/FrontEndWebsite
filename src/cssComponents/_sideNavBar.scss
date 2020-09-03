@@ -21,13 +21,17 @@
             .dropdown-container .list-item{
                 list-style-type:none;
                 margin-left: -16px;
+                width:100%;
                 height: 40px;
                 line-height: 20px;
-                color: #394649;
                 align-items: center;
                 padding-top: 0;
                 padding-bottom: 0;
                 padding-left: 16px;
+                background-color: #394649;
+                &:hover{
+                    background-color: #394649;
+                }
             }
         }
     }
