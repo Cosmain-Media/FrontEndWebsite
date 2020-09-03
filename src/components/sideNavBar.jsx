@@ -26,12 +26,8 @@ class SideNavBar extends Component {
 
        
     navDrop = (e) => {
-<<<<<<< HEAD
-        if(e.target.id=="beauty"){
-=======
         if(e.target.id === "beauty"){
             this.toggleNav(0);
->>>>>>> SideNavBar
         }
         if(e.target.id=="wellness"){
             this.toggleNav(1);
