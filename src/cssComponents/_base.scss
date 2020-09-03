@@ -1,0 +1,27 @@
+:root {
+    --color-primary: grey;
+
+    --color-grey-light: grey;
+}
+
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; 
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}   
+
+body {
+    font-family: "Opens sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
