@@ -9,6 +9,7 @@ class Nav extends Component {
     }
 
     browser = React.createRef();
+    
     componentDidMount() {
         document.addEventListener("mousedown", this.onClickOutside);
     }
