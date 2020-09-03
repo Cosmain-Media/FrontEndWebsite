@@ -1,0 +1,35 @@
+.side-sticky-menu{
+    padding-left:35px;
+    .content{
+        margin: 33px auto 0 6px;
+        &-body{
+            width: 256px;
+            margin: 0 auto;
+            position: relative;
+            .dropdown-btn{
+                width: 100%;
+                height: 32px;
+                font-size: 12px;
+                line-height: 3.8;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                color: #002333;
+                border-bottom: #dcdee1 1px solid;
+                font-weight: 700;
+            }
+            .dropdown-container .list-item{
+                list-style-type:none;
+                margin-left: -16px;
+                height: 40px;
+                line-height: 20px;
+                color: #394649;
+                align-items: center;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 16px;
+            }
+        }
+    }
+}
+

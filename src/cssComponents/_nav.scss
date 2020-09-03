@@ -1,0 +1,63 @@
+.nav {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-gap: 3rem;
+    padding: 16px 20px;
+    background-color: var(--color-primary);
+    // align-items: center;
+
+    &-logo {
+        grid-column: 1/1;
+        .img{
+            height:100%;
+        }
+        
+    }
+
+    &-browse {
+        color: greenyellow;
+        background-color: silver;
+        grid-column: 2/3;
+        justify-items: center;
+
+        .browse-text {
+            color: purple;
+        }
+
+        .dropdown {
+            display: block;
+            color: blue;
+        }
+    }
+
+    &-search {
+        grid-column: 3/4;
+        
+
+        &-input {
+            width: 90%;
+            border-radius: 10rem;
+            padding: .7rem 2rem;
+            border: .1rem solid var(--color-grey-light);
+
+            &:focus {
+                outline: none;
+            }
+            
+        }
+
+        &-icon {
+            width: 2rem;
+            height: 1rem;
+        }
+    }
+
+    &-login {
+        grid-column: 4/5;
+    }
+
+    &-sign-up {
+        grid-column: 5/5;
+    }
+}
