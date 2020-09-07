@@ -9,21 +9,21 @@ class vidLayout extends Component {
                     <h1 className="video-heading-popular">
                         Most Popular
                     </h1>
-                    <div className="video-slidebar-popular">
-                        <div className="video-slidebar-video-1">
-                            adfa
+                    <div className="video-slidebar">
+                        <div className="video-slidebar-video">
+                            <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div className="video-slidebar-video-2">
-                            fasfdas
+                        <div className="video-slidebar-video">
+                            <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div className="video-slidebar-video-3">
-                            dafsf
+                        <div className="video-slidebar-video">                    
+                            <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <h1 className="video-heading-interview">
                         Interviews
                     </h1>
-                    <div className="video-slidebar-interview">
+                    <div className="video-slidebar">
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
