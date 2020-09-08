@@ -30,35 +30,35 @@ class vidLayout extends Component {
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div className="video-slidebar-video">
+                        <div className="video-slidebar-video">                    
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <h1 className="video-heading-tutorial">
                         Tutorials
                     </h1>
-                    <div className="video-slidebar-tutorial">
+                    <div className="video-slidebar">
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div className="video-slidebar-video">
+                        <div className="video-slidebar-video">                    
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <h1 className="video-heading-blog">
                         Blogs
                     </h1>
-                    <div className="video-slidebar-blog">
+                    <div className="video-slidebar">
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div className="video-slidebar-video">
+                        <div className="video-slidebar-video">                    
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>

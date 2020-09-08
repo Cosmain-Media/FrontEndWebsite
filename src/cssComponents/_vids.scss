@@ -1,10 +1,13 @@
 .video {
-    grid-column: col-start 1 / col-end 8;
+    grid-column: col-start 1 / full-end;
 
     &-container {
         display: grid;
         background-color: silver;
         grid-template-rows: repeat(8, min-content);
+        grid-gap: 2rem;
+        padding: 2rem 0 2rem 5rem;
+        margin: 2rem 0;
     }
 
     &-heading-popular {
@@ -14,8 +17,8 @@
 
     &-slidebar {
         display: grid;
+        grid-template-rows: minmax(25rem, 1fr);
         grid-template-columns: repeat(3, 1fr);
-        grid-row: 2/3;
         grid-column: 1/-1;
         position: relative;
 
@@ -23,38 +26,6 @@
             width: 100%;
             height: 100%;
         }
-    }
-
-    
-
-    &-heading-interview {
-        grid-row: 3/4;
-        grid-column: 1/-1;
-    }
-    
-    &-slidebar-interview {            
-        grid-row: 4/5;
-        grid-column: 1/-1;
-    }
-
-    &-heading-tutorial {
-        grid-row: 5/6;
-        grid-column: 1/-1;
-    }
-    
-    &-slidebar-tutorial {            
-        grid-row: 6/7;
-        grid-column: 1/-1;
-    }
-
-    &-heading-blog {
-        grid-row: 7/8;
-        grid-column: 1/-1;
-    }
-    
-    &-slidebar-blog {            
-        grid-row: 8/8;
-        grid-column: 1/-1;
     }
 
 }
