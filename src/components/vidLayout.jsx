@@ -60,7 +60,89 @@ class vidLayout extends Component {
                         </div>                        
                     </div>
                     <h1 className="video-heading">
+                        Tutorials
+                    </h1>
+                    <div className="video-slidebar">
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 className="video-heading">
                         Interviews
+                    </h1>
+                    <div className="video-slidebar">
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                        <div className="video-slidebar-container">
+                            <div className="video-slidebar-container-iframe">
+                                <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">4,873</span>
+                                <span className="video-slidebar-container-description-time">45min</span>
+                                <span className="video-slidebar-container-description-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-container-description-professor">Stephen</span>
+                                <span className="video-slidebar-container-description-bookmark">&#8364;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 className="video-heading">
+                        Blog
                     </h1>
                     <div className="video-slidebar">
                         <div className="video-slidebar-container">
