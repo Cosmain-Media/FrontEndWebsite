@@ -12,6 +12,13 @@ class vidLayout extends Component {
                     <div className="video-slidebar">
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div className="video-slidebar-video-description">
+                                <span className="video-slidebar-video-students">4,873</span>
+                                <span className="video-slidebar-video-time">45min</span>
+                                <span className="video-slidebar-video-heading">Increase your sales, and get more loyal customers</span>
+                                <span className="video-slidebar-video-professor">Stephen</span>
+                                <span className="video-slidebar-video-bookmark">&#8364;</span>
+                            </div>
                         </div>
                         <div className="video-slidebar-video">
                             <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
