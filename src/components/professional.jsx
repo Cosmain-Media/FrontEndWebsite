@@ -20,4 +20,5 @@ class Professional extends Component {
         )
     }
 }
+
 export default Professional
