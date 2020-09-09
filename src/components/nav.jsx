@@ -9,6 +9,7 @@ class Nav extends Component {
     }
 
     browser = React.createRef();
+    
     componentDidMount() {
         document.addEventListener("mousedown", this.onClickOutside);
     }
@@ -39,7 +40,7 @@ class Nav extends Component {
 
     render () {
         return (
-            <div className="homepage">
+            <div className="nav-container">
                 <nav className="nav">
                     <div className="nav-logo">
                         <img src="/images/cosmain-logo.png" alt="LOGO" type="image/png"></img>

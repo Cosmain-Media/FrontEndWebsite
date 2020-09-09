@@ -1,0 +1,41 @@
+.footer-container{
+    padding-left:35px;
+    font-size: 1.5rem;
+    background-color:var(--color-primary);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 100px 0 0;
+    padding: 60px 41px;
+    color: white;
+
+    &-ul {
+        list-style-type: none;
+        font-size: 1.5rem;
+    }
+}
+
+.footer-container-ul > li {
+    float: left;
+    margin-right: 15px;
+}
+
+li > a{
+    text-decoration: none;
+    color: white;
+}
+
+li > a:hover {
+    color: #ffdd00;
+}
+.social-media-links{
+    font-size: 2.5rem;
+    float:right;
+    cursor: pointer;
+    .media-link{
+        color: white;
+        margin: 0 1rem;
+    }
+}
+
