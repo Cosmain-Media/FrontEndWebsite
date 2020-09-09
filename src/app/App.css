@@ -170,10 +170,12 @@ body {
     grid-template-rows: minmax(25rem, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-column: 1/-1;
+    grid-gap: 3rem;
     position: relative; }
     .video-slidebar-video iframe {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      border-top-left-radius: 3rem; }
 
 .homepage {
   display: grid;
