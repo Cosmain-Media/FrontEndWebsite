@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SideNavBar from '../components/sideNavBar';
 import Professional from '../components/professional';
+import Footer from '../components/footer'
 
 class Test extends Component {
     render () {
@@ -8,6 +9,7 @@ class Test extends Component {
             <div >
                 <SideNavBar />  
                 <Professional />
+                <Footer />
             </div>
         )
     }
