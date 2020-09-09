@@ -22,7 +22,7 @@ html {
   min-height: 100vh; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Opens sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-grey-dark-2); }
@@ -268,6 +268,21 @@ li > a:hover {
   .social-media-links .media-link {
     color: white;
     margin: 0 1rem; }
+
+.profile-container {
+  background-color: var(--color-grey-light); }
+
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(2, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  font-size: 1.6rem;
+  color: white;
+  padding: 15px; }
+
+.profile-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px; }
 
 .homepage {
   display: grid;
