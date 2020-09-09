@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
 import HomePage from '../pages/homepage'
+import FilterPage from '../pages/filterpage'
 import Test from '../pages/test'
 import Nav from '../components/nav'
 
@@ -13,6 +14,9 @@ function App() {
       <Switch>
         <Route exact path="/" render={ () => 
           <HomePage/>
+        }></Route>
+        <Route exact path ="/videos" render={ () =>
+          <FilterPage />
         }></Route>
         <Route exact path ="/test" render={ () =>
           <Test/>
