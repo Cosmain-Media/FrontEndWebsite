@@ -1,0 +1,13 @@
+.car-container {
+    width: 100%;
+
+    &-slide {
+
+    }
+
+    &-slide img {
+        resize: both;
+        min-width: 100%;
+        height: 100vh;
+    }
+}
