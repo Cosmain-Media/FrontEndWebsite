@@ -31,7 +31,7 @@
                     padding-top: 0;
                     padding-bottom: 0;
                     padding-left: 1.5rem;
-                    a{
+                    a {
                         font-size:1.5rem;
                     }
                     &:hover{
@@ -40,6 +40,13 @@
                             cursor: pointer;
                             border-radius: 4px;
                     }
+                }
+
+                .active {
+                    background-color: #002333;
+                    color:white;
+                    cursor: pointer;
+                    border-radius: 4px;
                 }
             }
         }

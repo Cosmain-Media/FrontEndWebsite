@@ -46,7 +46,7 @@ class SideNavBar extends Component {
                             {this.state.navDrop.map(function(data, index){
                                  if (index===0 && data ===true) {
                                     return (<ul className="dropdown-container" key={index}>
-                                        <div className="list-item">
+                                        <div className="list-item active">
                                             <a>Barber</a>
                                         </div>
                                         <div className="list-item">
