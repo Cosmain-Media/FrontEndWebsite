@@ -9,6 +9,7 @@
     font-size: inherit;
     background-color: var(--color-primary);
 
+
     &-container {
         display: grid;
         grid-template-rows: minmax(6rem, 1fr);
@@ -16,9 +17,12 @@
     }
 
     &-logo {
-        // grid-column: 1/2;
-        .img{
-            height:100%;
+        width:100%;
+        height:auto;
+        margin: auto;
+        grid-column: 1/2;
+        img{
+            width:100%;
         }
         
     }

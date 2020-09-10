@@ -15,10 +15,20 @@ class Professional extends Component {
     render () {
         return (
             <div>
-                <div className="profile-container">
-                    <div className="profile-wrapper">
-                        <img src={"https://www.thestatesman.com/wp-content/uploads/2017/08/1493458748-beauty-face-517.jpg"} className="profile-image" alt="" width="400px" height="250px"/>
-                        <p>This is the text of my profession</p>
+                <div className='profile'>
+                    <div className="profile-container">
+                        <div className="profile-container-grid">
+                            <div className='img-wrapper'>
+                                <img src={"https://www.thestatesman.com/wp-content/uploads/2017/08/1493458748-beauty-face-517.jpg"}  alt=""/>
+                            </div>
+                            <div className='description'>
+                                    <div className="description-name">James Kim</div>
+                                    <div className="description-profession">Barber</div>
+                            </div>
+                            <div className='button-container'>
+                                <button className ='cosmain-link'>Learn More</button> 
+                            </div>
+                        </div>
                     </div>
                 </div>
 

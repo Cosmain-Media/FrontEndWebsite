@@ -1,0 +1,13 @@
+.professionalpage {
+    display: grid;
+    grid-template-columns: [side-start] 8rem [side-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+
+    &-sidenav {
+        grid-row: 1/-1;
+        grid-column: side-start / side-end;
+    }
+
+    &-video {
+        grid-column: col-start 2 / col-end 8;
+    }
+}

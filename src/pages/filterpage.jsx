@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SideNavSection from '../components/sideNavBar';
 import VideoSection from '../components/vidLayout';
-import FooterSection from '../components/footer';
-
 class FilterPage extends Component {
     render () {
         return (
@@ -12,9 +10,6 @@ class FilterPage extends Component {
                 </div>
                 <div className="filterpage-video">
                     <VideoSection />
-                </div>
-                <div className="filterpage-footer">
-                   
                 </div>
             </div>
         )
