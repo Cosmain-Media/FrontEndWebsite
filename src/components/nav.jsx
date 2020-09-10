@@ -41,7 +41,7 @@ class Nav extends Component {
     render () {
         return (
             <div className="nav-container">
-                <nav className="nav">
+                <nav className="nav" style={{display: "grid"}}>
                     <div className="nav-logo">
                         <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
                     </div>
