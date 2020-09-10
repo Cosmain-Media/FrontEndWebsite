@@ -26,6 +26,19 @@ class FilterPage extends Component {
                             <div className="filterpage-main-header-relatedSkills-tags">8</div>
                             <div className="filterpage-main-header-relatedSkills-tags">9</div>
                         </div>
+                        <div className="filterpage-main-header-featured">
+                            <div className="filterpage-main-header-featured-image-1">
+                                <img src="" alt=""/>
+                            </div>
+                            <div className="filterpage-main-header-featured-image-2">
+                                <img src="" alt=""/>
+                            </div>
+                            <div className="filterpage-main-header-featured-content">
+                                <h1 className="filterpage-main-header-featured-content-heading"></h1>
+                                <div className="filterpage-main-header-featured-content-professor"></div>
+                                <span className="filterpage-main-header-featured-content-time"></span>
+                            </div>
+                        </div>
                     </div>
                     <div className="filterpage-main-video">
                       <VideoSection />
