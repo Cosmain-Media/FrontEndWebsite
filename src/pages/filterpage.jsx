@@ -27,11 +27,11 @@ class FilterPage extends Component {
                             <div className="filterpage-main-header-relatedSkills-tags">9</div>
                         </div>
                         <div className="filterpage-main-header-featured">
-                            <div className="filterpage-main-header-featured-image-1">
-                                <img src="" alt=""/>
+                            <div className="filterpage-main-header-featured-image">
+                                <img className="border-radius-left-corners" src="https://images.unsplash.com/photo-1599689018034-48e2ead82951?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80" alt=""/>
                             </div>
-                            <div className="filterpage-main-header-featured-image-2">
-                                <img src="" alt=""/>
+                            <div className="filterpage-main-header-featured-image">
+                                <img src="https://images.unsplash.com/photo-1599703170453-e0faceaa79ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt=""/>
                             </div>
                             <div className="filterpage-main-header-featured-content">
                                 <h1 className="filterpage-main-header-featured-content-heading"></h1>
