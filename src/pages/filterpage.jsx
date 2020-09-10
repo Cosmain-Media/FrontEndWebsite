@@ -34,9 +34,18 @@ class FilterPage extends Component {
                                 <img src="https://images.unsplash.com/photo-1599703170453-e0faceaa79ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt=""/>
                             </div>
                             <div className="filterpage-main-header-featured-content">
-                                <h1 className="filterpage-main-header-featured-content-heading"></h1>
-                                <div className="filterpage-main-header-featured-content-professor"></div>
-                                <span className="filterpage-main-header-featured-content-time"></span>
+                                <h1 className="filterpage-main-header-featured-content-heading">Photography: Tell a Thousand Words Through Pictures</h1>
+                                <div className="filterpage-main-header-featured-content-professor">
+                                    <div className="filterpage-main-header-featured-content-professor-image">
+                                        <img src="https://images.unsplash.com/photo-1554844453-7ea2a562a6c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt=""/>
+                                    </div>
+                                    <div className="filterpage-main-header-featured-content-professor-shortDescription">
+                                        <span className="filterpage-main-header-featured-content-professor-shortDescription-name">Nikkolas Smith</span>
+                                        <span className="filterpage-main-header-featured-content-professor-shortDescription-profession">Concept Photographer / Illustrator / Editor</span>
+                                        <span className="filterpage-main-header-featured-content-professor-shortDescription-followers">5098 students</span>
+                                    </div>
+                                </div>
+                                <span className="filterpage-main-header-featured-content-time">1h 38min</span>
                             </div>
                         </div>
                     </div>
