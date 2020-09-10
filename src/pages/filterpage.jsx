@@ -14,7 +14,7 @@ class FilterPage extends Component {
                     <VideoSection />
                 </div>
                 <div className="filterpage-footer">
-                   
+                    <FooterSection />
                 </div>
             </div>
         )

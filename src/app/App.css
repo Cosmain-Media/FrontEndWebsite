@@ -278,9 +278,13 @@ li > a:hover {
 
 .filterpage {
   display: grid;
+  grid-template-rows: repeat(2, min-content);
   grid-template-columns: [side-start] 8rem [side-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]; }
   .filterpage-sidenav {
-    grid-row: 1/-1;
+    grid-row: 1/1;
     grid-column: side-start / side-end; }
   .filterpage-video {
-    grid-column: col-start 2 / col-end 8; }
+    grid-column: col-start 2 / center-end; }
+  .filterpage-footer {
+    grid-row: 2/2;
+    grid-column: 1/-1; }
