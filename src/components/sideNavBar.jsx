@@ -4,7 +4,7 @@ class SideNavBar extends Component {
     constructor() {
         super()
         this.state = {
-           navDrop: [false, false, false]
+           navDrop: [true, true, true]
         }
       }
     toggleNav = (int) => {
