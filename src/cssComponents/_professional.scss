@@ -1,0 +1,56 @@
+.profile{
+    padding: 2rem 2rem 0 5rem;
+    &-container {
+        &-grid {
+            display: grid;
+            grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+            font-size: 1.6rem;
+            padding: 15px;
+            height:15rem;
+            .img-wrapper{
+                grid-column-start:full-start ;
+                grid-column-end:2 ;
+                display:inherit;
+                justify-content: center;
+                align-content: center;
+                img{
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .description{
+                grid-column-start:center-start ;
+                grid-column-end:3 ;
+                color:black;
+                display:inherit;
+                justify-content: center;
+                align-content: center;
+                &-name{
+                    font-size:2.5rem;
+                }
+                &-profession{
+                    font-size:2rem;
+                }
+            }
+            .button-container{
+                display:inherit;
+                justify-content:right;
+                align-content: center;
+                grid-column-start:center-end ;
+                grid-column-end:full-end ;
+                .cosmain-link{
+                    background-color: var(--color-primary);
+                    color:white;
+                    border-radius:.5rem;
+                    border-style:none;
+                    font-size:1.5rem;
+                    height:4rem;
+                    width:10rem;
+                    cursor:pointer;
+                }
+
+            }
+        }
+    }
+}

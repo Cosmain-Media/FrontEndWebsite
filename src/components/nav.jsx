@@ -43,8 +43,7 @@ class Nav extends Component {
             <div className="nav-container">
                 <nav className="nav">
                     <div className="nav-logo">
-                        <img src="/images/cosmain-logo.png" alt="LOGO" type="image/png"></img>
-                        {/* <img src={require('./images/bumper1.png')} /> */}
+                        <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
                     </div>
                     <div className="nav-browse" ref={this.browser}>
                         <h1 className="nav-browse-text" onClick={this.navDrop}>

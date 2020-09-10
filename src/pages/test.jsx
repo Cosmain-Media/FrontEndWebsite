@@ -8,8 +8,7 @@ class Test extends Component {
     render () {
         return (
             <div >
-                <Carousel />
-                <Footer />
+                <SideNavBar />  
             </div>
         )
     }

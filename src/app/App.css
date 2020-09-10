@@ -22,7 +22,7 @@ html {
   min-height: 100vh; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Opens sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-grey-dark-2); }
@@ -41,8 +41,13 @@ body {
     display: grid;
     grid-template-rows: minmax(6rem, 1fr);
     font-size: 1.6rem; }
-  .nav-logo .img {
-    height: 100%; }
+  .nav-logo {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    grid-column: 1/2; }
+    .nav-logo img {
+      width: 100%; }
   .nav-browse {
     justify-content: center;
     font-size: 1.5rem;
@@ -276,6 +281,50 @@ li > a:hover {
     resize: both;
     min-width: 100%;
     height: 100vh; }
+.profile {
+  padding: 2rem 2rem 0 5rem; }
+  .profile-container-grid {
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    font-size: 1.6rem;
+    padding: 15px;
+    height: 15rem; }
+    .profile-container-grid .img-wrapper {
+      grid-column-start: full-start;
+      grid-column-end: 2;
+      display: inherit;
+      justify-content: center;
+      align-content: center; }
+      .profile-container-grid .img-wrapper img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px; }
+    .profile-container-grid .description {
+      grid-column-start: center-start;
+      grid-column-end: 3;
+      color: black;
+      display: inherit;
+      justify-content: center;
+      align-content: center; }
+      .profile-container-grid .description-name {
+        font-size: 2.5rem; }
+      .profile-container-grid .description-profession {
+        font-size: 2rem; }
+    .profile-container-grid .button-container {
+      display: inherit;
+      justify-content: right;
+      align-content: center;
+      grid-column-start: center-end;
+      grid-column-end: full-end; }
+      .profile-container-grid .button-container .cosmain-link {
+        background-color: var(--color-primary);
+        color: white;
+        border-radius: .5rem;
+        border-style: none;
+        font-size: 1.5rem;
+        height: 4rem;
+        width: 10rem;
+        cursor: pointer; }
 
 .homepage {
   display: grid;
@@ -286,3 +335,20 @@ li > a:hover {
 .headerRow {
   grid-row: 1 / 1;
   grid-column: 1 / -1; }
+.filterpage {
+  display: grid;
+  grid-template-columns: [side-start] 8rem [side-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]; }
+  .filterpage-sidenav {
+    grid-row: 1/-1;
+    grid-column: side-start / side-end; }
+  .filterpage-video {
+    grid-column: col-start 2 / col-end 8; }
+
+.professionalpage {
+  display: grid;
+  grid-template-columns: [side-start] 8rem [side-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]; }
+  .professionalpage-sidenav {
+    grid-row: 1/-1;
+    grid-column: side-start / side-end; }
+  .professionalpage-video {
+    grid-column: col-start 2 / col-end 8; }
