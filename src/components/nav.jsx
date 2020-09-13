@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Nav extends Component {
     constructor() {
@@ -40,9 +41,10 @@ class Nav extends Component {
 
     render () {
         return (
-                <nav className="nav">
+            <div className="nav-container">
+                <nav className="nav" style={{display: "grid"}}>
                     <div className="nav-logo">
-                        <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
+                    <Link to="/"><img src={process.env.PUBLIC_URL + '/cosmain-logo.png'}></img></Link>
                     </div>
                     <div className="nav-browse" ref={this.browser}>
                         <h1 className="nav-browse-text" onClick={this.navDrop}>
@@ -193,12 +195,13 @@ class Nav extends Component {
                         </button>
                     </div>
                     <div className="nav-login">
-                        Log In
+                        <Link to="/videos">Login</Link>
                     </div>
                     <div className="nav-sign-up">
                         Sign Up
                     </div>
                 </nav>
+            </div>
         )
     }
 }

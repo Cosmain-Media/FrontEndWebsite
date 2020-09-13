@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SideNavBar from '../components/sideNavBar';
+import Professional from '../components/professional';
 import Footer from '../components/footer';
 import Carousel from '../components/header'
 
@@ -8,9 +9,6 @@ class Test extends Component {
         return (
             <div >
                 <SideNavBar />  
-                <SideNavBar />  
-                <Carousel />
-                <Footer />
             </div>
         )
     }
