@@ -40,7 +40,8 @@ class Nav extends Component {
 
     render () {
         return (
-                <nav className="nav">
+            <div className="nav-container">
+                <nav className="nav" style={{display: "grid"}}>
                     <div className="nav-logo">
                         <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
                     </div>
@@ -199,6 +200,7 @@ class Nav extends Component {
                         Sign Up
                     </div>
                 </nav>
+        </div>
         )
     }
 }
