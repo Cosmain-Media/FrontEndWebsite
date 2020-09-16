@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProfessionalService from '../services/professional'
 
 class Professional extends Component {
     constructor() {
@@ -10,6 +11,10 @@ class Professional extends Component {
     }
     componentWillUnmount() {
        
+    }
+
+    testCreate = () => {
+        const test = ProfessionalService.createProfessional()
     }
 
     render () {
@@ -26,7 +31,7 @@ class Professional extends Component {
                                     <div className="description-profession">Barber</div>
                             </div>
                             <div className='button-container'>
-                                <button className ='cosmain-link'>Learn More</button> 
+                                <button className ='cosmain-link' onClick={this.testCreate}>Learn More</button> 
                             </div>
                         </div>
                     </div>
