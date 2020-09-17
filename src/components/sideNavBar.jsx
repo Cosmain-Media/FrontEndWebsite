@@ -29,10 +29,10 @@ class SideNavBar extends Component {
         if(e.target.id === "beauty"){
             this.toggleNav(0);
         }
-        if(e.target.id=="wellness"){
+        if(e.target.id === "wellness"){
             this.toggleNav(1);
         }
-        if(e.target.id=="popular"){
+        if(e.target.id === "popular"){
             this.toggleNav(2);
         }
     }
