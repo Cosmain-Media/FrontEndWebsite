@@ -30,7 +30,7 @@ class Footer extends Component {
                         <a className="media-link youtube" href="https://www.youtube.com/channel/UCkG2U_6acwkGhgV_XJpy7ig?view_as=subscriber" target="_blank" title="Cosmain YouTube">
                             <FontAwesomeIcon icon={faYoutube} />
                         </a>
-                        <a className="media-link instagram" itemprop="sameAs" href="https://www.instagram.com/cosmainusa/" target="_blank" title="Cosmain Instagram">
+                        <a className="media-link instagram" itemProp="sameAs" href="https://www.instagram.com/cosmainusa/" target="_blank" title="Cosmain Instagram">
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </div>

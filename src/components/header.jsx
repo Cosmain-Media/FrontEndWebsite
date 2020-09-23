@@ -12,21 +12,21 @@ class Header extends Component {
                     <Carousel.Item>
                         <div className="car-container-slide">
                             <div>
-                                <img src={place1} />
+                                <img src={place1} alt=""/>
                             </div>
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className="car-container-slide">
                             <div>
-                                <img src={place2} />
+                                <img src={place2} alt=""/>
                             </div>
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className="car-container-slide">
                             <div>
-                                <img src={place3} />
+                                <img src={place3} alt=""/>
                             </div>
                         </div>
                     </Carousel.Item>

@@ -10,7 +10,6 @@ class vidLayout extends Component {
     }
     componentDidMount = async () =>  {
         const tutorials = await getVideos('tutorial')
-        console.log(tutorials)
         this.setState({videos: tutorials });
         console.log(this.state.videos);
     }
@@ -30,7 +29,7 @@ class vidLayout extends Component {
                         {this.state.videos !== null && this.state.videos.map( video =>
                             <div className="video-slidebar-container" key={video._id}>
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src={video.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe title={video.title} src={video.videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="allowFullScreen"></iframe>
                                 </div>
                                 <div className="video-slidebar-container-description">
                                 <span className="video-slidebar-container-description-students">{video.favorites}</span>
@@ -54,7 +53,7 @@ class vidLayout extends Component {
                         {this.state.videos !== null && this.state.videos.map( video =>
                             <div className="video-slidebar-container" key={video._id}>
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src={video.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe title={video.title} src={video.videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="allowFullScreen"></iframe>
                                 </div>
                                 <div className="video-slidebar-container-description">
                                 <span className="video-slidebar-container-description-students">{video.favorites}</span>
@@ -77,7 +76,7 @@ class vidLayout extends Component {
                         {this.state.videos !== null && this.state.videos.map( video =>
                             <div className="video-slidebar-container" key={video._id}>
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src={video.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe title={video.title} src={video.videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="allowFullScreen"></iframe>
                                 </div>
                                 <div className="video-slidebar-container-description">
                                 <span className="video-slidebar-container-description-students">{video.favorites}</span>
@@ -100,7 +99,7 @@ class vidLayout extends Component {
                         {this.state.videos !== null && this.state.videos.map( video =>
                             <div className="video-slidebar-container" key={video._id}>
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src={video.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe title={video.title} src={video.videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="allowFullScreen"></iframe>
                                 </div>
                                 <div className="video-slidebar-container-description">
                                 <span className="video-slidebar-container-description-students">{video.favorites}</span>
