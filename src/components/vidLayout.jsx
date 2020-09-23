@@ -26,17 +26,17 @@ class vidLayout extends Component {
                     <h1 className="video-heading">
                         Most Popular
                     </h1>
-                    {this.state.videos !== null && this.state.videos.map( (v, index) =>
-                        <div className="video-slidebar" key={index}>
-                            <div className="video-slidebar-container">
+                    <div className="video-slidebar" >
+                        {this.state.videos !== null && this.state.videos.map( video =>
+                            <div className="video-slidebar-container" key={video._id}>
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src={v.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src={video.videoLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                            <div className="video-slidebar-container-description">
-                                <span className="video-slidebar-container-description-students">{v.favorites}</span>
-                                <span className="video-slidebar-container-description-time">{v.duration}</span>
-                                <span className="video-slidebar-container-description-heading">{v.title}</span>
-                                <span className="video-slidebar-container-description-professor">{v.professionalID}</span>
+                                <div className="video-slidebar-container-description">
+                                <span className="video-slidebar-container-description-students">{video.favorites}</span>
+                                <span className="video-slidebar-container-description-time">{video.duration}</span>
+                                <span className="video-slidebar-container-description-heading">{video.title}</span>
+                                <span className="video-slidebar-container-description-professor">{video.professionalID}</span>
                                 <span className="video-slidebar-container-description-bookmark">
                                 <svg className="video-slidebar-container-description-bookmark-icon">
                                     <use xlinkHref="/images/sprite.svg#icon-bookmark"></use>
@@ -44,8 +44,8 @@ class vidLayout extends Component {
                                 </span>
                                 </div>
                             </div>               
-                        </div>
-                    )}
+                        )}
+                    </div>
 
                     <h1 className="video-heading">
                         Tutorials
