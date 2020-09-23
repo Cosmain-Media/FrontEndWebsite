@@ -48,7 +48,26 @@ class FilterPage extends Component {
                         </div>
                     </div>
                     <div className="filterpage-main-video">
-                      <VideoSection />
+                        <div className="video">
+                            <div className="video-container">
+                                <h1 className="video-heading">
+                                    Most Popular
+                                </h1>
+                                <VideoSection />
+                                <h1 className="video-heading">
+                                    Tutorials
+                                </h1>
+                                <VideoSection />
+                                <h1 className="video-heading">
+                                    Interviews
+                                </h1>
+                                <VideoSection />
+                                <h1 className="video-heading">
+                                    Blogs
+                                </h1>
+                                <VideoSection />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

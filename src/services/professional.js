@@ -3,7 +3,7 @@ import professional from "../assets/professionals"
 function createProfessional () {
     const professionals = professional();
     fetch('http://localhost:3001/api/professional', {
-        method: 'GET',
+        method: 'POST',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
             pro: professionals
