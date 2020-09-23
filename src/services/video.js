@@ -1,13 +1,13 @@
 function getVideos (type) {
-    fetch('http://localhost:3001/api/videos', {
-        method: 'post',
+    return fetch('http://localhost:3001/api/videos', {
+        method: 'POST',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
             videoType: type
         })
     })
     .then(response => response.json()) // Turn json response back to string
-    .then(console.log)
+    .then(data => data)
     .catch(err => console.log(err))
 }
 

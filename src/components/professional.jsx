@@ -7,14 +7,16 @@ class Professional extends Component {
     }
     
     componentDidMount() {
-       
+      const test = ProfessionalService.createProfessional()
+        console.log(test) 
     }
     componentWillUnmount() {
-       
+
     }
 
     testCreate = () => {
         const test = ProfessionalService.createProfessional()
+        console.log(test)
     }
 
     render () {
@@ -45,7 +47,7 @@ class Professional extends Component {
                         <div className="video-slidebar">
                             <div className="video-slidebar-container">
                                 <div className="video-slidebar-container-iframe">
-                                    <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/HCv563TfnVY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
                                 <div className="video-slidebar-container-description">
                                     <span className="video-slidebar-container-description-students">4,873 students</span>
