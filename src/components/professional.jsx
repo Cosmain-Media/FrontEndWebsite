@@ -8,7 +8,7 @@ class Professional extends Component {
     
     componentDidMount() {
       const test = ProfessionalService.createProfessional()
-        console.log(test) 
+        console.log(test)
     }
     componentWillUnmount() {
 
