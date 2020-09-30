@@ -26,7 +26,7 @@ class FilterPage extends Component {
                 </div>
                 <div className="filterpage-main">
                     <div className="filterpage-main-header">
-                        <h1 className="filterpage-main-header-category">Online {this.state.currentProfessional} Classes</h1>
+                        <h1 className="filterpage-main-header-category">{this.state.currentProfessional} Videos</h1>
                         <span className="filterpage-main-header-followers">1m Followers</span>
                         <div className="filterpage-main-header-relatedSkills">
                             <span className="filterpage-main-header-relatedSkills-heading">Related Skills</span>
