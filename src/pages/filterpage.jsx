@@ -12,12 +12,15 @@ class FilterPage extends Component {
 
     changeProfessional = (professional) => {
         this.setState({currentProfessional: professional});
+        window.location = "#top";
     }
     
     render () {
 
         return (
             <div className="filterpage">
+                <a id="top"></a>
+
                 <div className="filterpage-sidenav">
                     <SideNavSection changeProfessional={this.changeProfessional}/>
                 </div>

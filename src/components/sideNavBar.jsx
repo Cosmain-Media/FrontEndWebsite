@@ -4,7 +4,10 @@ class SideNavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           navDrop: [true, true, true]
+           navDrop: [true, true, true],
+           beautyCat: ['Barber', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
+           wellCat: ['Acupuncturist', 'Athletic Trainer', 'Chiropractor', 'Dietician', 'Fitness Instructor', 'Life & Wellness Coach', 'Massage Therapist', 'Nutritionist', 'Phsyical Therapist', 'Psychotherapist'],
+           popCat: ['Traditional Chinese Acupuncturist', 'Acupuncture', 'Balayage', 'Body Waxing', 'Couples Massage', 'Dermal/Cosmetic Filters', 'Classic Lash Extensions', 'Intense Pulsed Light (IPL)', 'Laser Hair Removal', 'Manicure', 'Microblading', 'Pedicure', 'Personal Training', 'Women\'s Haircuts']
         }
     }
 
@@ -45,71 +48,47 @@ class SideNavBar extends Component {
                     <div className="content">
                         <div className="content-body">
                             <div className="dropdown-btn" id="beauty" onClick={this.navDrop}>Beauty</div>
-                            {this.state.navDrop.map(function(data, index){
-                                 if (index===0 && data ===true) {
-                                    return (<ul className="dropdown-container" key={index}>
-                                        <div className="list-item active" onClick={ () => { changeProfessional('Barber') } }>
-                                            <a>Barber</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Cosmetic Doctor') } }>
-                                            <a>Cosmetic Doctor</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Cosmetic Registered Nurse') } }>
-                                            <a>Cosmetic Registered Nurse</a>
-                                        </div>
-                                    </ul>
-                                    );
-                                } 
-                            })}  
+                            <div className="dropdown-container">
+                                {this.state.navDrop.map((data, index) => {
+                                    if (index===0 && data) {
+                                        return (
+                                            this.state.beautyCat !== null && this.state.beautyCat.map( profession => 
+                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <a>{profession}</a>
+                                                </div>
+                                            )
+                                        )
+                                    }
+                                })}
+                            </div>
                             <div className="dropdown-btn" id="wellness" onClick={this.navDrop}>Wellness</div>
-                            {this.state.navDrop.map(function(data, index){
-                                 if (index===1 && data ===true) {
-                                    return (<ul className="dropdown-container" key={index}>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Acupuncturist') } }>
-                                            <a>Acupuncturist</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Athletic Trainer') } }>
-                                            <a>Athletic Trainer</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Chiropractor') } }>
-                                            <a>Chiropractor</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Dietitian') } }>
-                                            <a>Dietitian</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Fitness Instructor') } }>
-                                            <a>Fitness Instructor</a>
-                                        </div>
-                                    </ul>
-                                    );
-                                } 
-                            })}   
+                            <div className="dropdown-container">
+                                {this.state.navDrop.map((data, index) => {
+                                    if (index===1 && data) {
+                                        return (
+                                            this.state.wellCat !== null && this.state.wellCat.map( profession =>
+                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <a>{profession}</a>
+                                                </div>
+                                            )
+                                        )
+                                    } 
+                                })}
+                            </div>   
                             <div className="dropdown-btn" id="popular" onClick={this.navDrop}>Popular Services</div>
-                            {this.state.navDrop.map(function(data, index){
-                                 if (index===2 && data ===true) {
-                                    return (<ul className="dropdown-container" key={index}>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Traditional Chinese Acupuncturist') } }>
-                                            <a>Traditional Chinese Acupuncturist</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Acupuncture') } }>
-                                            <a>Acupuncture</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Balayage') } }>
-                                            <a>Balayage</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Body Waxing') } }>
-                                            <a>Body Waxing</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Couples Massage') } }>
-                                            <a>Couples Massage</a>
-                                        </div>
-                                        <div className="list-item" onClick={ () => { changeProfessional('Dermal/Cosmetic Filters') } }>
-                                            <a>Dermal/Cosmetic Filters</a>
-                                        </div>
-                                    </ul>
-                                    );
-                                } 
-                            })}    
+                            <div className="dropdown-container">
+                                {this.state.navDrop.map((data, index) => {
+                                    if (index===2 && data) {
+                                        return (
+                                            this.state.popCat !== null && this.state.popCat.map( profession =>
+                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <a>{profession}</a>
+                                                </div>
+                                            )
+                                        )
+                                    } 
+                                })}
+                            </div>    
                         </div>
                     </div>
                 </div>
