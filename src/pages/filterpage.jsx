@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import SideNavSection from '../components/sideNavBar';
 import VideoSection from '../components/vidLayout';
+
 class FilterPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            currentProfessional: 'Barber'
+        }
+    }
+
+    changeProfessional = (professional) => {
+        this.setState({currentProfessional: professional});
+    }
+    
     render () {
+
         return (
             <div className="filterpage">
                 <div className="filterpage-sidenav">
-                    <SideNavSection />
+                    <SideNavSection changeProfessional={this.changeProfessional}/>
                 </div>
                 <div className="filterpage-main">
                     <div className="filterpage-main-header">
-                        <h1 className="filterpage-main-header-category">Online Barber Classes</h1>
+                        <h1 className="filterpage-main-header-category">Online {this.state.currentProfessional} Classes</h1>
                         <span className="filterpage-main-header-followers">1m Followers</span>
                         <div className="filterpage-main-header-relatedSkills">
                             <span className="filterpage-main-header-relatedSkills-heading">Related Skills</span>
