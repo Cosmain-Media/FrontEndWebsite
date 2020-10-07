@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
 import SideNavSection from '../components/sideNavBar';
 import VideoLayout from '../components/vidLayout';
-import getTrends from '../services/trending';
 
 class FilterPage extends Component {
-    constructor() {
-        super();
-        this.state = {
-            currentProfessional: 'Barber',
-            numResults: 3,
-            videos: []
-        }
+    constructor(props) {
+        super(props);
     }
 
-    changeProfessional = async (professional) => {
-        this.setState({currentProfessional: professional});
-        var videoReq = await getTrends(professional , this.state.numResults)
-        this.setState({videos: videoReq.trendingVideos});
-        window.location = "#top";
-    }
+    // changeProfessional = async (professional) => {
+    //     this.setState({currentProfessional: professional});
+    //     var videoReq = await getTrends(professional , this.state.numResults)
+    //     this.setState({videos: videoReq.trendingVideos});
+    //     window.location = "#top";
+    // }
     
     render () {
         return (
             <div className="filterpage">
-                <a id="top"></a>
-
                 <div className="filterpage-sidenav">
-                    <SideNavSection changeProfessional={this.changeProfessional}/>
+                    <SideNavSection changeProfessional={this.props.changeProfessional}/>
                 </div>
                 <div className="filterpage-main">
                     <div className="filterpage-main-header">
-                        <h1 className="filterpage-main-header-category">{this.state.currentProfessional} Videos</h1>
+                        <h1 className="filterpage-main-header-category">{this.props.currentProfessional} Videos</h1>
                         <span className="filterpage-main-header-followers">1m Followers</span>
                         <div className="filterpage-main-header-relatedSkills">
                             <span className="filterpage-main-header-relatedSkills-heading">Related Skills</span>
@@ -73,19 +65,19 @@ class FilterPage extends Component {
                                 <h1 className="video-heading">
                                     Most Popular
                                 </h1>
-                                <VideoLayout videos={this.state.videos} />
+                                <VideoLayout videos={this.props.videos} />
                                 <h1 className="video-heading">
                                     Tutorials
                                 </h1>
-                                <VideoLayout videos={this.state.videos} />
+                                <VideoLayout videos={this.props.videos} />
                                 <h1 className="video-heading">
                                     Interviews
                                 </h1>
-                                <VideoLayout videos={this.state.videos} />
+                                <VideoLayout videos={this.props.videos} />
                                 <h1 className="video-heading">
                                     Blogs
                                 </h1>
-                                <VideoLayout videos={this.state.videos} />
+                                <VideoLayout videos={this.props.videos} />
                             </div>
                         </div>
                     </div>

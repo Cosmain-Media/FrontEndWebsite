@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Nav extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
            navDrop: false,
            beautyCat: ['Barber', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
@@ -62,7 +62,7 @@ class Nav extends Component {
                                         <li className="list-title"><b>Beauty</b></li>
                                         
                                         {this.state.beautyCat !== null && this.state.beautyCat.map( profession => 
-                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}
@@ -72,7 +72,7 @@ class Nav extends Component {
                                     <ul>
                                         <li className="list-title"><b>Wellness</b></li>
                                         {this.state.wellCat !== null && this.state.wellCat.map( profession => 
-                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}
@@ -82,7 +82,7 @@ class Nav extends Component {
                                     <ul>
                                         <li className="list-title"><b>Popular Services</b></li>
                                         {this.state.popCat !== null && this.state.popCat.map( profession => 
-                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}
