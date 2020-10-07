@@ -2,35 +2,30 @@ import React, { Component } from 'react';
 import getVideos from '../services/video';
 
 class vidLayout extends Component {
-    constructor(){
-        super();
-        this.state = {
-            videos: null
-        }
+    constructor(props){
+        super(props);
     }
-    componentDidMount = async () =>  {
-        const tutorials = await getVideos('tutorial')
-        this.setState({videos: tutorials });
-        console.log(this.state.videos);
-    }
+
 
     componentWillUnmount = async () => {
         
     }
 
     render () {
+        
+        let {videos} = this.props;
+        console.log(videos);
+
         return (
             <div className="video-slidebar" >
-                {this.state.videos !== null && this.state.videos.map( video =>
-                    <div className="video-slidebar-container" key={video._id}>
-                        <div className="video-slidebar-container-iframe">
-                            <iframe title={video.title} src={video.videoLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="allowFullScreen"></iframe>
+                {videos !== null && videos.map( video => 
+                    <div className="video-slidebar-container" key={video.videoId}>
+                        <div className="video-slidebar-container-iframe" dangerouslySetInnerHTML={{__html: video.embedded }}>
                         </div>
                         <div className="video-slidebar-container-description">
-                        <span className="video-slidebar-container-description-students">{video.favorites} favorites</span>
-                        <span className="video-slidebar-container-description-time">{video.duration} min</span>
+                        <span className="video-slidebar-container-description-students">{video.viewCount} views</span>
+                        {/* <span className="video-slidebar-container-description-time">{video.duration} min</span> */}
                         <span className="video-slidebar-container-description-heading">{video.title}</span>
-                        <span className="video-slidebar-container-description-professor">Profesional ID: {video.professionalID}</span>
                         <span className="video-slidebar-container-description-bookmark">
                         <svg className="video-slidebar-container-description-bookmark-icon">
                             <use xlinkHref="/images/sprite.svg#icon-bookmark"></use>

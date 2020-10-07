@@ -1,5 +1,5 @@
 function getVideos (type) {
-    return fetch('http://localhost:3001/api/videos', {
+    return fetch('http://localhost:3001/api/videos/', {
         method: 'POST',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({

@@ -5,6 +5,9 @@ class Nav extends Component {
         super()
         this.state = {
            navDrop: false,
+           beautyCat: ['Barber', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
+           wellCat: ['Acupuncturist', 'Athletic Trainer', 'Chiropractor', 'Dietician', 'Fitness Instructor', 'Life & Wellness Coach', 'Massage Therapist', 'Nutritionist', 'Phsyical Therapist', 'Psychotherapist'],
+           popCat: ['Traditional Chinese Acupuncturist', 'Acupuncture', 'Balayage', 'Body Waxing', 'Couples Massage', 'Dermal/Cosmetic Filters', 'Classic Lash Extensions', 'Intense Pulsed Light (IPL)', 'Laser Hair Removal', 'Manicure', 'Microblading', 'Pedicure', 'Personal Training', 'Women\'s Haircuts']
         }
     }
 
@@ -39,12 +42,15 @@ class Nav extends Component {
     }
 
     render () {
+        const {changeProfessional} = this.props;
+        
         return (
             <div className="nav-container">
                 <nav className="nav" style={{display: "grid"}}>
                     <div className="nav-logo">
                         <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
                     </div>
+
                     <div className="nav-browse" ref={this.browser}>
                         <h1 className="nav-browse-text" onClick={this.navDrop}>
                             Browse ◢
@@ -54,127 +60,32 @@ class Nav extends Component {
                                 <div className="nav-browse-dropdown-catContainer-cat1">
                                     <ul>
                                         <li className="list-title"><b>Beauty</b></li>
-                                        <a className="list-item">
-                                            <li>Barber</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Cosmetic Doctor</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Cosmetic Registered Nurse</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Cosmetic Surgeon</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Esthetician</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Hair Stylist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Lash Technician</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Makeup Artist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Nail Artist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Piercing Artist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Tanning Artist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Tattoo Artist</li>
-                                        </a>
+                                        
+                                        {this.state.beautyCat !== null && this.state.beautyCat.map( profession => 
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <li>{profession}</li>
+                                                </a>
+                                        )}
                                     </ul>
                                 </div>
                                 <div className="nav-browse-dropdown-catContainer-cat2">
                                     <ul>
                                         <li className="list-title"><b>Wellness</b></li>
-                                        <a className="list-item">
-                                            <li>Acupuncturist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Athletic Trainer</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Chiropractor</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Dietitian</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Fitness Instructor</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Life &amp; Wellness</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Coach</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Massage Therapist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Nutritionist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Physical Therapist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Psychotherapist</li>
-                                        </a>
+                                        {this.state.wellCat !== null && this.state.wellCat.map( profession => 
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <li>{profession}</li>
+                                                </a>
+                                        )}
                                     </ul>
                                 </div>
                                 <div className="nav-browse-dropdown-catContainer-cat3">
                                     <ul>
                                         <li className="list-title"><b>Popular Services</b></li>
-                                        <a className="list-item">
-                                            <li>Traditional Chinese Acupuncturist</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Acupuncture</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Balayage</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Body Waxing</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Couples Massage</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Dermal/Cosmetic Filters</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Classic Lash Extensions</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Intense Pulsed Light (IPL)</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Laser Hair Removal</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Manicure</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Microblading</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Pedicure</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Personal Training</li>
-                                        </a>
-                                        <a className="list-item">
-                                            <li>Women's Haircuts</li>
-                                        </a>
+                                        {this.state.popCat !== null && this.state.popCat.map( profession => 
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                    <li>{profession}</li>
+                                                </a>
+                                        )}
                                     </ul>
                                 </div>
                             </div>
@@ -185,6 +96,7 @@ class Nav extends Component {
                             </div>
                         </div>}
                     </div>
+
                     <div className="nav-search">
                         <input type="text" className="nav-search-input" placeholder="Search Professions"/>
                         <button className="nav-search-button">
@@ -193,6 +105,7 @@ class Nav extends Component {
                             </svg>
                         </button>
                     </div>
+                    
                     <div className="nav-login">
                         Log In
                     </div>

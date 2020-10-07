@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import SideNavSection from '../components/sideNavBar';
-import VideoSection from '../components/vidLayout';
+import VideoLayout from '../components/vidLayout';
+import getTrends from '../services/trending';
 
 class FilterPage extends Component {
     constructor() {
         super();
         this.state = {
-            currentProfessional: 'Barber'
+            currentProfessional: 'Barber',
+            numResults: 3,
+            videos: []
         }
     }
 
-    changeProfessional = (professional) => {
+    changeProfessional = async (professional) => {
         this.setState({currentProfessional: professional});
+        var videoReq = await getTrends(professional , this.state.numResults)
+        this.setState({videos: videoReq.trendingVideos});
         window.location = "#top";
     }
     
     render () {
-
         return (
             <div className="filterpage">
                 <a id="top"></a>
@@ -69,19 +73,19 @@ class FilterPage extends Component {
                                 <h1 className="video-heading">
                                     Most Popular
                                 </h1>
-                                <VideoSection />
+                                <VideoLayout videos={this.state.videos} />
                                 <h1 className="video-heading">
                                     Tutorials
                                 </h1>
-                                <VideoSection />
+                                <VideoLayout videos={this.state.videos} />
                                 <h1 className="video-heading">
                                     Interviews
                                 </h1>
-                                <VideoSection />
+                                <VideoLayout videos={this.state.videos} />
                                 <h1 className="video-heading">
                                     Blogs
                                 </h1>
-                                <VideoSection />
+                                <VideoLayout videos={this.state.videos} />
                             </div>
                         </div>
                     </div>

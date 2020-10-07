@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VideoSection from '../components/vidLayout';
+import VideoLayout from '../components/vidLayout';
 import Header from '../components/header'
 
 class HomePage extends Component {
@@ -14,19 +14,19 @@ class HomePage extends Component {
                         <h1 className="video-heading">
                             Most Popular
                         </h1>
-                        <VideoSection />
+                        <VideoLayout />
                         <h1 className="video-heading">
                             Tutorials
                         </h1>
-                        <VideoSection />
+                        <VideoLayout />
                         <h1 className="video-heading">
                             Interviews
                         </h1>
-                        <VideoSection />
+                        <VideoLayout />
                         <h1 className="video-heading">
                             Blogs
                         </h1>
-                        <VideoSection />
+                        <VideoLayout />
                     </div>
                 </div>
             </div>
