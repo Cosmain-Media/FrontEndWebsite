@@ -11,11 +11,11 @@ class vidLayout extends Component {
 
     render() {
         let { videos } = this.props;
+        console.log("-------vidlayout----------");
         console.log(videos);
-
         return (
             <div className="video-slidebar" >
-                {videos !== null && videos.map(video =>
+                {videos !== undefined && videos.map(video =>
                     <div className="video-slidebar-container" key={video.videoId}>
                         <div className="video-slidebar-container-iframe" dangerouslySetInnerHTML={{ __html: video.embedded }}>
                         </div>

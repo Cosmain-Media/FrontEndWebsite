@@ -41,7 +41,7 @@ class SideNavBar extends Component {
 
     render () {
         const {changeProfessional} = this.props;
-
+        console.log("-------sidenavbar----------");
         return (
             <main>
                 <div className="side-sticky-menu">

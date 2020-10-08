@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import HomePage from '../pages/homepage';
 import FilterPage from '../pages/filterpage';
 import Test from '../pages/test';
@@ -22,19 +22,34 @@ class App extends Component {
   }
 
   changeProfessional = async (professional) => {
-      this.setState({currentProfessional: professional});
-      var videoReq = await getTrends(professional , this.state.numResults)
-      this.setState({videos: videoReq.trendingVideos});
-      this.setState({route: 'Filter'});
+      var videoReq = await getTrends(professional , this.state.numResults);
+      this.setState({currentProfessional: professional, videos: videoReq.trendingVideos, route: 'Filter'});
       window.location = "#top";
+  }
+
+  renderRedirect = () => {
+    if (this.state.route ==='Filter') {
+      return (
+        <Redirect
+          to={`/videos`}
+        />
+      );
+    }
+    if (this.state.route !=='Home') {
+      return (
+        <Redirect
+          to={`/`}
+        />
+      );
+    }
   }
 
   render() {
     const {currentProfessional, videos, route} = this.state
-
+    console.log("-------app----------");
     return (
       <div>
-        <a id='top'></a>
+        <a id='top'>{this.renderRedirect()}</a>
         <Nav changeProfessional={this.changeProfessional}/>
         <Switch>
           <Route exact path="/" render={ () => 

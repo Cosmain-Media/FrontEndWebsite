@@ -43,7 +43,7 @@ class Nav extends Component {
 
     render () {
         const {changeProfessional} = this.props;
-        
+        console.log("-------nav----------");
         return (
             <div className="nav-container">
                 <nav className="nav" style={{display: "grid"}}>
@@ -62,7 +62,7 @@ class Nav extends Component {
                                         <li className="list-title"><b>Beauty</b></li>
                                         
                                         {this.state.beautyCat !== null && this.state.beautyCat.map( profession => 
-                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}
@@ -72,7 +72,7 @@ class Nav extends Component {
                                     <ul>
                                         <li className="list-title"><b>Wellness</b></li>
                                         {this.state.wellCat !== null && this.state.wellCat.map( profession => 
-                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}
@@ -82,7 +82,7 @@ class Nav extends Component {
                                     <ul>
                                         <li className="list-title"><b>Popular Services</b></li>
                                         {this.state.popCat !== null && this.state.popCat.map( profession => 
-                                                <a href='/videos' className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <a className="list-item" onClick={ () => { changeProfessional(profession) } }>
                                                     <li>{profession}</li>
                                                 </a>
                                         )}

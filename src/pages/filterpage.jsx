@@ -15,6 +15,7 @@ class FilterPage extends Component {
     // }
     
     render () {
+        console.log("-------filterpage----------");
         return (
             <div className="filterpage">
                 <div className="filterpage-sidenav">

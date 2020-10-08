@@ -3,7 +3,9 @@ import VideoLayout from '../components/vidLayout';
 import Header from '../components/header'
 
 class HomePage extends Component {
+    
     render () {
+        console.log("-------homepage----------");
         return (
             <div className="homepage">
                 <div className="headerRow">
@@ -15,7 +17,7 @@ class HomePage extends Component {
                             Most Popular
                         </h1>
                         <VideoLayout />
-                        <h1 className="video-heading">
+                        {/* <h1 className="video-heading">
                             Tutorials
                         </h1>
                         <VideoLayout />
@@ -26,7 +28,7 @@ class HomePage extends Component {
                         <h1 className="video-heading">
                             Blogs
                         </h1>
-                        <VideoLayout />
+                        <VideoLayout /> */}
                     </div>
                 </div>
             </div>
