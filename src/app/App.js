@@ -35,13 +35,6 @@ class App extends Component {
         />
       );
     }
-    if (this.state.route !=='Home') {
-      return (
-        <Redirect
-          to={`/`}
-        />
-      );
-    }
   }
 
   render() {
