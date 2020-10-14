@@ -22,8 +22,8 @@ class App extends Component {
   }
 
   changeProfessional = async (professional) => {
-      var videoReq = await getTrends(professional , this.state.numResults);
-      this.setState({currentProfessional: professional, videos: videoReq.trendingVideos, route: 'Filter'});
+      var videoReq = await getTrends(professional + ' trends');
+      this.setState({currentProfessional: professional, videos: videoReq, route: 'Filter'});
       window.location = "#top";
   }
 

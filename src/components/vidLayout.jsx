@@ -17,10 +17,10 @@ class vidLayout extends Component {
             <div className="video-slidebar" >
                 {videos !== undefined && videos.map(video =>
                     <div className="video-slidebar-container" key={video.videoId}>
-                        <div className="video-slidebar-container-iframe" dangerouslySetInnerHTML={{ __html: video.embedded }}>
+                        <div className="video-slidebar-container-iframe" dangerouslySetInnerHTML={{ __html: video.html }}>
                         </div>
                         <div className="video-slidebar-container-description">
-                            <span className="video-slidebar-container-description-students">{video.viewCount} views</span>
+                            <span className="video-slidebar-container-description-students">{video.views} views</span>
                             {/* <span className="video-slidebar-container-description-time">{video.duration} min</span> */}
                             <span className="video-slidebar-container-description-heading">{video.title}</span>
                             <span className="video-slidebar-container-description-bookmark">
