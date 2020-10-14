@@ -1,29 +1,71 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import {Route, Switch} from 'react-router-dom'
-import HomePage from '../pages/homepage'
-import FilterPage from '../pages/filterpage'
-import Test from '../pages/test'
-import Nav from '../components/nav'
+import {Route, Switch, Redirect} from 'react-router-dom';
+import HomePage from '../pages/homepage';
+import FilterPage from '../pages/filterpage';
+import Test from '../pages/test';
+import Professional from '../pages/professionalpage';
+import Nav from '../components/nav';
+import Footer from '../components/footer';
+import getTrends from '../services/trending';
 
-function App() {
-  return (
-    <div>
-      <Nav/>
-      <Switch>
-        <Route exact path="/" render={ () => 
-          <HomePage/>
-        }></Route>
-        <Route exact path ="/videos" render={ () =>
-          <FilterPage />
-        }></Route>
-        <Route exact path ="/test" render={ () =>
-          <Test/>
-        }></Route>
-      </Switch>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentProfessional: 'Barber',
+      numResults: 3,
+      videos: [],
+      route: 'Home'
+    }
+  }
+
+  changeProfessional = async (professional) => {
+      var videoReq = await getTrends(professional , this.state.numResults);
+      this.setState({currentProfessional: professional, videos: videoReq.trendingVideos, route: 'Filter'});
+      window.location = "#top";
+  }
+
+  renderRedirect = () => {
+    if (this.state.route ==='Filter') {
+      return (
+        <Redirect
+          to={`/videos`}
+        />
+      );
+    }
+  }
+
+  render() {
+    const {currentProfessional, videos, route} = this.state
+    console.log("-------app----------");
+    return (
+      <div>
+        <a id='top'>{this.renderRedirect()}</a>
+        <Nav changeProfessional={this.changeProfessional}/>
+        <Switch>
+          <Route exact path="/" render={ () => 
+            <HomePage/>
+          }></Route>
+          <Route exact path ="/videos" render={ () =>
+            <FilterPage 
+            currentProfessional={currentProfessional}
+            changeProfessional={this.changeProfessional}
+            videos={videos}
+            />
+          }></Route>
+          <Route exact path ="/test" render={ () =>
+            <Test/>
+          }></Route>
+          <Route exact path ="/professional" render={ () =>
+            <Professional/>
+          }></Route>
+        </Switch>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
