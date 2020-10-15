@@ -16,8 +16,8 @@ class HomePage extends Component {
                         <h1 className="video-heading">
                             Most Popular
                         </h1>
-                        <VideoLayout />
-                        {/* <h1 className="video-heading">
+                        {/* <VideoLayout />
+                        <h1 className="video-heading">
                             Tutorials
                         </h1>
                         <VideoLayout />

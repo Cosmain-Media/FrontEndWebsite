@@ -1,16 +1,17 @@
 .video {
-    grid-column: col-start 1 / full-end;
+    grid-column: 1 / -1;
 
     &-heading {
         color: black;
         font-size: 3.6rem;
+        padding: 0rem 0 1.5rem 2rem;
     }
 
     &-container {
         display: grid;
         grid-template-rows: min-content 1fr min-content 1fr;
         grid-gap: 2rem;
-        padding: 2rem 2rem 2rem 5rem;
+        padding: 0rem 2rem 2rem 3rem;
         margin: 2rem 0;
         transition: all 2s;
     }

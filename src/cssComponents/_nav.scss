@@ -1,6 +1,6 @@
 .nav {
     grid-column: 1/-1;
-    display: grid;
+    display: grid!important;
     grid-template-columns: 10% 10% 30% 26% 7% 7%;
     grid-gap: 3rem;
     padding: 1rem 2rem;
@@ -9,6 +9,7 @@
     font-size: inherit;
     background-color: var(--color-primary);
 
+
     &-container {
         display: grid;
         grid-template-rows: minmax(6rem, 1fr);
@@ -16,9 +17,12 @@
     }
 
     &-logo {
-        // grid-column: 1/2;
-        .img{
-            height:100%;
+        width:100%;
+        height:auto;
+        margin: auto;
+        grid-column: 1/2;
+        img{
+            width:100%;
         }
         
     }
@@ -43,7 +47,10 @@
             position: absolute;
             display: flex;
             flex-direction: column;
+            background-color: white;
             border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            z-index: 2;
             border-top: unset;
             font-family: Poppins;
 

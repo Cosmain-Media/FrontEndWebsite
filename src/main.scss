@@ -1,5 +1,6 @@
 // BASE
 @import "cssComponents/base";
+@import "cssComponents/typography";
 
 // COMPONENTS
 @import "cssComponents/nav";
@@ -7,8 +8,10 @@
 @import "cssComponents/vids";
 @import "cssComponents/footer";
 @import "cssComponents/professional";
+@import "cssComponents/header";
 
 
 //LAYOUT
 @import "layout/homepage";
 @import "layout/filterpage";
+@import "layout/professionalpage";
