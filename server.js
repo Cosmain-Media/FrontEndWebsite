@@ -1,12 +1,19 @@
-const path = require('path');
-const express = require('express');
-const app = express();
-const publicPath = path.join(__dirname, '..', 'public');
-const port = 3000;
-app.use(express.static(publicPath));
-app.get('*', (req, res) => {
-   res.sendFile(path.join(publicPath, 'index.html'));
+const express = require('express')
+const path = require('path')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-app.listen(port, () => {
-   console.log('Server is up!');
+
+const port = process.env.PORT || 3000;
+
+const server = app.listen(port, function() {
+  console.log(`Express app running on port ${port}`)
 });
