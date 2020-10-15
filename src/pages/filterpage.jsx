@@ -66,19 +66,19 @@ class FilterPage extends Component {
                                 <h1 className="video-heading">
                                     Most Popular
                                 </h1>
-                                <VideoLayout videos={this.props.videos} />
+                                <VideoLayout videos={this.props.videos.Trending} />
                                 <h1 className="video-heading">
                                     Tutorials
                                 </h1>
-                                <VideoLayout videos={this.props.videos} />
+                                <VideoLayout videos={this.props.videos.Tutorial} />
                                 <h1 className="video-heading">
                                     Interviews
                                 </h1>
-                                <VideoLayout videos={this.props.videos} />
+                                <VideoLayout videos={this.props.videos.Interview} />
                                 <h1 className="video-heading">
                                     Blogs
                                 </h1>
-                                <VideoLayout videos={this.props.videos} />
+                                <VideoLayout videos={this.props.videos.Blog} />
                             </div>
                         </div>
                     </div>

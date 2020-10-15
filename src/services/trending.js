@@ -1,7 +1,7 @@
 
-function getTrends(query){
-    const queryParams= '?searchQuery=' + query;
-    return fetch('http://localhost:3001/api/videos/trending' + queryParams , {
+function getVideos(type, query){
+    const queryParams= '?videoType='+ type + '&searchQuery=' + query;
+    return fetch('http://localhost:3001/api/videos/all' + queryParams , {
         method: 'GET',
         headers: {'Content-type': 'application/json'},
     })

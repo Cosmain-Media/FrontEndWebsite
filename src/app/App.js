@@ -7,7 +7,7 @@ import Test from '../pages/test';
 import Professional from '../pages/professionalpage';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
-import getTrends from '../services/trending';
+import getVideos from '../services/video';
 
 
 class App extends Component {
@@ -16,14 +16,18 @@ class App extends Component {
     this.state = {
       currentProfessional: 'Barber',
       numResults: 3,
-      videos: [],
+      videos: {'Trending': [], 'Interview': [], 'Tutorial': [], 'Blog': [] },
       route: 'Home'
     }
   }
 
   changeProfessional = async (professional) => {
-      var videoReq = await getTrends(professional + ' trends');
-      this.setState({currentProfessional: professional, videos: videoReq, route: 'Filter'});
+      for (let [type, videos] of Object.entries(this.state.videos)) {
+        var videoReq = await getVideos(type, professional);
+        this.state.videos[type] = videoReq;
+      }
+
+      // this.setState({currentProfessional: professional, videos: videoReq, route: 'Filter'});
       window.location = "#top";
   }
 
