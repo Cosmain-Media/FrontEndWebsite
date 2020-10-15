@@ -29,7 +29,7 @@ class Nav extends Component {
     }
 
     navDrop = () => {
-        if(this.state.navDrop == true){
+        if(this.state.navDrop === true){
             this.setState({
                 navDrop:false
             })
@@ -48,7 +48,7 @@ class Nav extends Component {
             <div className="nav-container">
                 <nav className="nav" style={{display: "grid"}}>
                     <div className="nav-logo">
-                        <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} />
+                        <img src={process.env.PUBLIC_URL + '/cosmain-logo.png'} alt='Cosmain_logo' />
                     </div>
 
                     <div className="nav-browse" ref={this.browser}>

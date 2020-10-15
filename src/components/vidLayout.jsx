@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import getVideos from '../services/video';
 
 class vidLayout extends Component {
     constructor(props) {

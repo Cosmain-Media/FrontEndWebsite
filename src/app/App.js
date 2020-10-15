@@ -22,12 +22,12 @@ class App extends Component {
   }
 
   changeProfessional = async (professional) => {
-      for (let [type, videos] of Object.entries(this.state.videos)) {
+      for (const type in this.state.videos) {
         var videoReq = await getVideos(type, professional);
         this.state.videos[type] = videoReq;
       }
 
-      // this.setState({currentProfessional: professional, videos: videoReq, route: 'Filter'});
+      this.setState({ currentProfessional: professional, route: 'Filter' });
       window.location = "#top";
   }
 
@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    const {currentProfessional, videos, route} = this.state
+    const {currentProfessional, videos} = this.state
     console.log("-------app----------");
     return (
       <div>
