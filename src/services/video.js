@@ -1,7 +1,7 @@
-
 function getVideos(type, profession){
+    console.log(process.env.LOCAL)
     const queryParams= '?videoType='+ type + '&profession=' + profession;
-    const apiURL=process.env.API_URL + '/videos';
+    const apiURL='https://cosmain-api.herokuapp.com/api' + '/videos';
     return fetch( apiURL + '/all' + queryParams , {
         method: 'GET',
         headers: {'Content-type': 'application/json'},

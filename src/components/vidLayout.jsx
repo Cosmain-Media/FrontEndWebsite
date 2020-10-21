@@ -10,8 +10,7 @@ class vidLayout extends Component {
 
     render() {
         let { videos } = this.props;
-        // console.log("-------vidlayout----------");
-        // console.log(videos);
+        console.log("-------vidlayout----------", videos);
         return (
             <div className="video-slidebar" >
                 {videos !== undefined && videos.map(video =>
