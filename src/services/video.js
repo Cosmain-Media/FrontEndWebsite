@@ -1,13 +1,11 @@
-function getVideos (type) {
-    return fetch('http://localhost:3001/api/videos/', {
-        method: 'POST',
+
+function getVideos(type, profession){
+    const queryParams= '?videoType='+ type + '&profession=' + profession;
+    return fetch('http://localhost:3001/api/videos/all' + queryParams , {
+        method: 'GET',
         headers: {'Content-type': 'application/json'},
-        body: JSON.stringify({
-            videoType: type
-        })
     })
-    .then(response => response.json()) // Turn json response back to string
-    .then(data => data)
+    .then(response => response.json())
     .catch(err => console.log(err))
 }
 

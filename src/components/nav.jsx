@@ -27,7 +27,7 @@ class Nav extends Component {
     }
 
     navDrop = () => {
-        if(this.state.navDrop == true){
+        if(this.state.navDrop === true){
             this.setState({
                 navDrop:false
             })
