@@ -1,7 +1,8 @@
 
 function getVideos(type, profession){
     const queryParams= '?videoType='+ type + '&profession=' + profession;
-    return fetch('http://localhost:3001/api/videos/all' + queryParams , {
+    const apiURL=process.env.apiURL + '/videos';
+    return fetch( apiURL + '/all' + queryParams , {
         method: 'GET',
         headers: {'Content-type': 'application/json'},
     })
