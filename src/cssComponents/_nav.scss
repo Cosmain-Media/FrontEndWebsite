@@ -98,7 +98,7 @@
         &-input {
             font-family: inherit;
             font-size: inherit;
-            color: inherit;
+            color: black;
             background-color: var(--color-grey-light-2);
             width: 85%;
             border-radius: 10rem;
@@ -111,12 +111,12 @@
                 outline: none;
                 width: 100%;
                 background-color: var(--color-grey-light-3);
-                color: var(--color-grey-dark-3);
+                color: black;
             }
 
             &::-webkit-input-placeholder {
                 font-weight: 100%;
-                color: var(--color-grey-light-4);
+                color: black;
             }
             
         }

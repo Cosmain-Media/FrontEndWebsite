@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class Nav extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
            navDrop: false,
         }
@@ -39,7 +39,13 @@ class Nav extends Component {
         }
     }
 
+    search = (e) => {
+        this.props.searchProfessional(e.target.value)
+    }
+
     render () {
+        const {changeProfessional} = this.props
+        
         return (
             <div className="nav-container">
                 <nav className="nav">
@@ -189,7 +195,7 @@ class Nav extends Component {
                         </div>}
                     </div>
                     <div className="nav-search">
-                        <input type="text" className="nav-search-input" placeholder="Search Professions"/>
+                        <input type="text" className="nav-search-input" placeholder="Search Professions" onChange={this.search}/>
                         <button className="nav-search-button">
                             <svg className="nav-search-icon">
                                 <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>

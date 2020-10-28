@@ -5,9 +5,6 @@ class vidLayout extends Component {
         super(props);
     }
 
-    componentWillUnmount = async () => {
-    }
-
     render() {
         let { videos } = this.props;
         console.log("-------vidlayout----------", videos);

@@ -5,7 +5,7 @@ class SideNavBar extends Component {
         super(props);
         this.state = {
            navDrop: [true, true, true],
-           beautyCat: ['Barber', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
+           beautyCat: ['Beauty', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
            wellCat: ['Acupuncturist', 'Athletic Trainer', 'Chiropractor', 'Dietician', 'Fitness Instructor', 'Life & Wellness Coach', 'Massage Therapist', 'Nutritionist', 'Phsyical Therapist', 'Psychotherapist'],
            popCat: ['Traditional Chinese Acupuncturist', 'Acupuncture', 'Balayage', 'Body Waxing', 'Couples Massage', 'Dermal/Cosmetic Filters', 'Classic Lash Extensions', 'Intense Pulsed Light (IPL)', 'Laser Hair Removal', 'Manicure', 'Microblading', 'Pedicure', 'Personal Training', 'Women\'s Haircuts']
         }
@@ -40,7 +40,7 @@ class SideNavBar extends Component {
     }
 
     render () {
-        const {changeProfessional} = this.props;
+        const {getVideos} = this.props;
         console.log("-------sidenavbar----------");
         return (
             <main>
@@ -53,7 +53,7 @@ class SideNavBar extends Component {
                                     if (index===0 && data) {
                                         return (
                                             this.state.beautyCat !== null && this.state.beautyCat.map( profession => 
-                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <div className="list-item" onClick={ () => { getVideos(profession) } }>
                                                     <a>{profession}</a>
                                                 </div>
                                             )
@@ -67,7 +67,7 @@ class SideNavBar extends Component {
                                     if (index===1 && data) {
                                         return (
                                             this.state.wellCat !== null && this.state.wellCat.map( profession =>
-                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <div className="list-item" onClick={ () => { getVideos(profession) } }>
                                                     <a>{profession}</a>
                                                 </div>
                                             )
@@ -81,7 +81,7 @@ class SideNavBar extends Component {
                                     if (index===2 && data) {
                                         return (
                                             this.state.popCat !== null && this.state.popCat.map( profession =>
-                                                <div className="list-item" onClick={ () => { changeProfessional(profession) } }>
+                                                <div className="list-item" onClick={ () => { getVideos(profession) } }>
                                                     <a>{profession}</a>
                                                 </div>
                                             )

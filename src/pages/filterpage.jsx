@@ -6,20 +6,13 @@ class FilterPage extends Component {
     constructor(props) {
         super(props);
     }
-
-    // changeProfessional = async (professional) => {
-    //     this.setState({currentProfessional: professional});
-    //     var videoReq = await getTrends(professional , this.state.numResults)
-    //     this.setState({videos: videoReq.trendingVideos});
-    //     window.location = "#top";
-    // }
     
     render () {
         console.log("-------filterpage----------");
         return (
             <div className="filterpage">
                 <div className="filterpage-sidenav">
-                    <SideNavSection changeProfessional={this.props.changeProfessional}/>
+                    <SideNavSection getVideos={this.props.getVideos}/>
                 </div>
                 <div className="filterpage-main">
                     <div className="filterpage-main-header">

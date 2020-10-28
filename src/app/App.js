@@ -7,7 +7,7 @@ import Test from '../pages/test';
 import Professional from '../pages/professionalpage';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
-import getVideos from '../services/video';
+import Videos from '../services/video';
 
 
 class App extends Component {
@@ -21,14 +21,35 @@ class App extends Component {
     }
   }
 
-  changeProfessional = async (professional) => {
+  getVideos = async (category) => {
       for (const type in this.state.videos) {
-        var videoReq = await getVideos(type, professional);
+        var videoReq = await Videos.getVideos(type, category);
         this.state.videos[type] = videoReq;
       }
 
-      this.setState({ currentProfessional: professional, route: 'Filter' });
+      this.setState({ currentProfessional: category, route: 'Filter' });
       window.location = "#top";
+  }
+
+  searchProfessional = async (professional) => {
+      // console.log(professional)
+      let timeout = null;
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout( async () => {
+        for (const type in this.state.videos) {
+          // console.log(type)
+          let videoReq = await Videos.searchVideos(type, professional);
+          this.setState(prevState => ({
+            videos: {                   // object that we want to update
+                ...prevState.videos,    // keep all other key-value pairs
+                [type]: videoReq     // update the value of specific key
+            }
+        }))
+        }
+        // console.log(this.state.videos)
+      }, 300)
   }
 
   renderRedirect = () => {
@@ -47,16 +68,16 @@ class App extends Component {
     return (
       <div>
         <a id='top'>{this.renderRedirect()}</a>
-        <Nav changeProfessional={this.changeProfessional}/>
+        <Nav changeProfessional={this.changeProfessional} searchProfessional={this.searchProfessional}/>
         <Switch>
           <Route exact path="/" render={ () => 
             <HomePage/>
           }></Route>
           <Route exact path ="/videos" render={ () =>
             <FilterPage 
-            currentProfessional={currentProfessional}
-            changeProfessional={this.changeProfessional}
-            videos={videos}
+              currentProfessional={currentProfessional}
+              getVideos={this.getVideos}
+              videos={videos}
             />
           }></Route>
           <Route exact path ="/test" render={ () =>
