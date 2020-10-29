@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #5BBAC7;
+    --color-primary: #202020;
 
     --color-grey-light: grey;
     --color-grey-light-2: #f4f2f2;
@@ -7,8 +7,18 @@
     --color-grey-light-4: #ccc;
 
     --color-grey-dark-2: #777;
-    --color-grey-dark-3: #3E484B;
+    --color-grey-dark-1: #383838;
 }
+
+$bp-largest: 81.25em;
+$bp-largest-1160: 72.5em;
+$bp-large-1080: 67.5em;
+$bp-large: 62.4em;
+$bp-large-920: 57.5em;
+$bp-medium-840: 52.5em;
+$bp-medium: 46.25em;
+$bp-medium-570: 35.625em;
+$bp-small-470: 29.375em;
 
 * {
     margin: 0;
@@ -19,6 +29,7 @@
 *::before,
 *::after {
     box-sizing: inherit; 
+    color: white;
 }
 
 html {
@@ -31,5 +42,4 @@ body {
     font-family: "Opens sans", sans-serif;
     font-weight: 400;
     line-height: 1.6;
-    color: var(--color-grey-dark-2);
 }

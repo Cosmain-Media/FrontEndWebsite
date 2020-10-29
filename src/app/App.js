@@ -1,90 +1,71 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, Switch, Redirect} from 'react-router-dom';
-import HomePage from '../pages/homepage';
+import {Route, Switch} from 'react-router-dom';
 import FilterPage from '../pages/filterpage';
-import Test from '../pages/test';
-import Professional from '../pages/professionalpage';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import Videos from '../services/video';
 
-
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      currentProfessional: 'Barber',
+      category: 'Beauty',
       numResults: 3,
       videos: {'Trending': [], 'Interview': [], 'Tutorial': [], 'Blog': [] },
-      route: 'Home'
+      route: 'Home',
+      tags: null,
+      error: null
     }
+  }
+
+  componentDidMount = async () => {
+      for (const type in this.state.videos) {
+        let videoReq = await Videos.getVideos(type, this.state.category);
+        this.state.videos[type] = videoReq;
+        this.setState({ videos: this.state.videos})
+      }
   }
 
   getVideos = async (category) => {
+      const query = typeof category === 'string' ? category : category.target.innerHTML
       for (const type in this.state.videos) {
-        var videoReq = await Videos.getVideos(type, category);
+        var videoReq = await Videos.getVideos(type, query);
         this.state.videos[type] = videoReq;
       }
 
-      this.setState({ currentProfessional: category, route: 'Filter' });
+      this.setState({ currentProfessional: query });
       window.location = "#top";
   }
 
-  searchProfessional = async (professional) => {
-      // console.log(professional)
-      let timeout = null;
+  searchTags = async (e, search) => {
+      e.preventDefault()
+      try {
+        const response = await Videos.searchTags(search);
+        this.setState({tags: response, error: response.length > 0 ? null : 'Could not find videos related to tags'})
+      } catch (error) {
 
-      clearTimeout(timeout);
-
-      timeout = setTimeout( async () => {
-        for (const type in this.state.videos) {
-          // console.log(type)
-          let videoReq = await Videos.searchVideos(type, professional);
-          this.setState(prevState => ({
-            videos: {                   // object that we want to update
-                ...prevState.videos,    // keep all other key-value pairs
-                [type]: videoReq     // update the value of specific key
-            }
-        }))
+        if(error){
+          this.setState({tags: null, error: error})
         }
-        // console.log(this.state.videos)
-      }, 300)
-  }
-
-  renderRedirect = () => {
-    if (this.state.route ==='Filter') {
-      return (
-        <Redirect
-          to={`/videos`}
-        />
-      );
-    }
+      }
   }
 
   render() {
-    const {currentProfessional, videos} = this.state
-    console.log("-------app----------");
+    const {category, videos, error, tags} = this.state
     return (
       <div>
-        <a id='top'>{this.renderRedirect()}</a>
-        <Nav changeProfessional={this.changeProfessional} searchProfessional={this.searchProfessional}/>
+        <Nav getVideos={this.getVideos}/>
         <Switch>
-          <Route exact path="/" render={ () => 
-            <HomePage/>
-          }></Route>
-          <Route exact path ="/videos" render={ () =>
+          <Route exact path ="/" render={ () =>
             <FilterPage 
-              currentProfessional={currentProfessional}
+              currentCategory={category}
               getVideos={this.getVideos}
+              searchTags={this.searchTags}
               videos={videos}
+              tags={tags}
+              error={error}
             />
-          }></Route>
-          <Route exact path ="/test" render={ () =>
-            <Test/>
-          }></Route>
-          <Route exact path ="/professional" render={ () =>
-            <Professional/>
           }></Route>
         </Switch>
         <Footer/>

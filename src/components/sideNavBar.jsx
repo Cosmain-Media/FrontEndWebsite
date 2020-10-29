@@ -41,7 +41,6 @@ class SideNavBar extends Component {
 
     render () {
         const {getVideos} = this.props;
-        console.log("-------sidenavbar----------");
         return (
             <main>
                 <div className="side-sticky-menu">
