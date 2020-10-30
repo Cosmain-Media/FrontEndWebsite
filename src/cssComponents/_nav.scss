@@ -1,40 +1,14 @@
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 2rem 4rem;
     color: white;
     background-color: var(--color-primary);
+    align-items: baseline;
 
     &-menu {
         display: flex;
-
-        &-items {
-            & a {
-                margin-left: 2rem;
-                padding: 2rem 1rem;
-                color: white;
-                text-decoration: none;
-                font-size: 1.6rem;
-                font-weight: 500;  
-                transition: all .5s;
-
-                &:hover {
-                    color: white;
-                    background-color: var(--color-grey-dark-1);
-                    text-decoration: none;
-                }
-            }
-        }
-
-        @media only screen and (max-width: $bp-largest){
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @media only screen and (max-width: $bp-largest){
-        flex-direction: column;
-        align-items: center;
+        align-items: baseline;
     }
 
     &-logo {
@@ -48,14 +22,93 @@
                 text-decoration: none;
                 color: white;
             }
+
+            & svg {
+                width: 15rem;
+                height: 4rem;
+                fill: transparent;
+                stroke: white;
+            }
+        }
+    }
+}
+
+.burger {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;;
+    background-color: var(--color-primary);
+
+    &-items {
+        padding: 1rem 10rem 1rem 2rem;
+        
+        &-container {
+            position: absolute;
+            top: 5.5rem;
+            left: 20rem; 
+            z-index: 10;
+            background-color: var(--color-primary);
+            border-radius: .4rem;
+            padding: 1rem;
+            
+            @media only screen and (max-width: $bp-medium-570){
+                position: relative;
+                top: 5rem;
+                left: 0; 
+                width: 100%;
+                background-color: var(--color-primary);
+            }
+        }
+
+        &:hover,
+        &:active {
+            display: block;
+        }
+        
+        & a {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                cursor: pointer;
+                color: white;
+                text-decoration: none;
+            }
+
+            & svg {
+                width: 2rem;
+                height: 2rem;
+                fill: white;
+                stroke: white;
+                margin: 0 1rem 0 0;
+            }
+        }
+        
+        &:hover {
+            background-color: var(--color-grey-light);
+            cursor: pointer;
         }
     }
 
-    // &-login {
-    //     grid-column: 5/6;
-    // }
+    &-menu {
+        margin: 0 0 0 1rem;
 
-    // &-sign-up {
-    //     grid-column: 6/6;
-    // }
+        &-icon {
+            position: absolute;
+            top: 2.5rem;
+            left: 20rem; 
+            padding: 0 0 .3rem 0;
+            width: 7rem;
+            height: 3rem;
+            fill: white;
+            stroke: white;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }

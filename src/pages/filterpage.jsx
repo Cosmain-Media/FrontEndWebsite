@@ -10,18 +10,25 @@ class FilterPage extends Component {
         }
     }
 
-    handleChange = (e) => {
+    handleSearch = (e) => {
+        e.persist()
         this.setState({search: e.target.value})
+
+        let timeout = null;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout( async () => {
+            this.props.searchTags(e, this.state.search)
+        }, 300)
     }
     
     render () {
         const { videos, searchTags, error, tags, getVideos } = this.props
-
         let dynamicTags = null
         if(tags === null){
             dynamicTags = videos.Trending
         }else{
-            console.log(tags)
             dynamicTags = tags
         }
 
@@ -32,7 +39,7 @@ class FilterPage extends Component {
                     <div className="filterpage-main-header">
                         <h1 className="filterpage-main-header-category">{this.props.currentCategory} Videos</h1>
                         <form className="filterpage-main-header-search" onSubmit={ (e) => { searchTags(e, this.state.search)}}>
-                            <input type="text" className="filterpage-main-header-search-input" placeholder="Search Tags" onChange={this.handleChange}/>
+                            <input type="text" className="filterpage-main-header-search-input" placeholder="Search Tags" onChange={this.handleSearch}/>
                             <button className="filterpage-main-header-search-button">
                                 <svg className="filterpage-main-header-search-icon">
                                     <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>
@@ -40,11 +47,11 @@ class FilterPage extends Component {
                             </button>
                         </form>
                         <ul className="filterpage-main-header-relatedTags list">
-                            <li className="filterpage-main-header-relatedTags-heading">Related Tags</li>
+                            { dynamicTags !== null && <li className="filterpage-main-header-relatedTags-heading">Related Tags</li>}
                             { dynamicTags !== null && dynamicTags.map( (v, i) => (
                                 v.tags.map( (t, i ) => (
                                     <div key={i}>
-                                        {t.includes(this.state.search) ? <li key={i} className="filterpage-main-header-relatedTags-tags" onClick={ () => getVideos(t)}>{t}</li> : null} 
+                                        { this.state.search === null ? <li key={i} className="filterpage-main-header-relatedTags-tags" onClick={ () => getVideos(t)}>{t}</li> : t.includes(this.state.search)  ? <li key={i} className="filterpage-main-header-relatedTags-tags" onClick={ () => getVideos(t)}>{t}</li> : null} 
                                     </div>
                                     
                                 ))                                

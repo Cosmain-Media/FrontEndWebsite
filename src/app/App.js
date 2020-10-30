@@ -25,17 +25,28 @@ class App extends Component {
         this.state.videos[type] = videoReq;
         this.setState({ videos: this.state.videos})
       }
+      try {
+        const response = await Videos.searchTags('beauty');
+        this.state.tags = response;
+        this.setState({tags: response, error: response.length > 0 ? null : 'Could not find videos related to tags'})
+      } catch (error) {
+        if(error){
+          console.log(error)
+          this.setState({tags: null, error: error})
+        }
+      }
   }
 
   getVideos = async (category) => {
-      const query = typeof category === 'string' ? category : category.target.innerHTML
+      console.log(category.query)
+      const query = typeof category === 'string' ? category : category.query
       for (const type in this.state.videos) {
         var videoReq = await Videos.getVideos(type, query);
+        console.log(videoReq)
         this.state.videos[type] = videoReq;
       }
 
       this.setState({ currentProfessional: query });
-      window.location = "#top";
   }
 
   searchTags = async (e, search) => {

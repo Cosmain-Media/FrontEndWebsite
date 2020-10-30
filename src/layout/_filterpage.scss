@@ -132,6 +132,10 @@
                     @media only screen and (max-width: $bp-largest){
                         width: 50%;
                     }
+
+                    @media only screen and (max-width: $bp-medium-570){
+                        width: 90%;
+                    }
         
                     &:focus {
                         outline: none;

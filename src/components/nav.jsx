@@ -8,8 +8,8 @@ class Nav extends Component {
            navDrop: false,
         }
     }
-
-    browser = React.createRef();
+    
+    burger = React.createRef()
     
     componentDidMount() {
         document.addEventListener("mousedown", this.onClickOutside);
@@ -19,24 +19,21 @@ class Nav extends Component {
     }
 
     onClickOutside = event => {
-        if (this.browser.current && !this.browser.current.contains(event.target)) {
+        if (this.burger.current && !this.burger.current.contains(event.target)) {
             this.setState({
                 navDrop: false
             })
         }
     }
 
-    navDrop = () => {
-        if(this.state.navDrop === true){
-            this.setState({
-                navDrop:false
-            })
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+            alert('You clicked outside of me!');
         }
-        else{
-            this.setState({
-                navDrop: true
-            })
-        }
+    }
+
+    navDrop = (e) => {
+        this.setState({navDrop: !this.state.navDrop})
     }
 
     render () {
@@ -46,34 +43,54 @@ class Nav extends Component {
             <div className="nav">
                 <div className="nav-logo">
                     <Link to="/">
-                        Cosmain
+                        <svg>
+                            <use xlinkHref="/images/sprite.svg#icon-logo"></use>
+                        </svg>
                     </Link>
                 </div>
                 <div className="nav-menu">
-                    <div className="nav-menu-items" name="beauty" onClick={ (e) => getVideos(e)}>
-                        <Link to="/">
-                            Beauty
-                        </Link>
-                    </div>
-                    <div className="nav-menu-items">
-                        <Link to="/">
-                            Wellness
-                        </Link>
-                    </div>
-                    <div className="nav-menu-items">
-                        <Link to="/">
-                            Lifestyle
-                        </Link>
-                    </div>
-                    <div className="nav-menu-items">
-                        <Link to="/">
-                            Login
-                        </Link>
-                    </div>
-                    <div className="nav-menu-items">
-                        <Link to="/">
-                            Sign Up
-                        </Link>
+                    <div className="nav-menu-items burger ">
+                        
+                        <svg className="burger-menu burger-menu-icon" onClick={ (e) => this.navDrop(e)}>
+                            <use xlinkHref="/images/sprite.svg#icon-menu3"></use>
+                        </svg>
+                        
+                        {this.state.navDrop !== false && 
+                            <div className="burger-items-container" ref={this.burger}>
+                            <div className="burger-items" onClick={ () => getVideos({query: 'beauty'})}>
+                                <Link to="/">
+                                    <svg>
+                                        <use xlinkHref="/images/sprite.svg#icon-drop"></use>
+                                    </svg>
+                                    <span>Beauty</span> 
+                                </Link>
+                            </div>
+                            <div className="burger-items" onClick={ () => getVideos({query: 'wellness'})}>
+                                <Link to="/">
+                                <svg>
+                                        <use xlinkHref="/images/sprite.svg#icon-slideshare"></use>
+                                    </svg>
+                                    <span>Wellness</span> 
+                                </Link>
+                            </div>
+                            <div className="burger-items" value="lifestyle" onClick={ () => getVideos({query: 'lifestyle'})}>
+                                <Link to="/">
+                                    <svg>
+                                        <use xlinkHref="/images/sprite.svg#icon-archive"></use>
+                                    </svg>
+                                    <span>Lifestyle</span> 
+                                </Link>
+                            </div>
+                            <div className="burger-items" value="business" onClick={ () => getVideos({query: 'business'})}>
+                                <Link to="/">
+                                    <svg>
+                                        <use xlinkHref="/images/sprite.svg#icon-briefcase"></use>
+                                    </svg>
+                                    <span>Business</span> 
+                                </Link>
+                            </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
