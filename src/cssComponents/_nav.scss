@@ -40,11 +40,11 @@
     background-color: var(--color-primary);
 
     &-items {
-        padding: 1rem 10rem 1rem 2rem;
+        padding: .5rem 10rem 1rem 2rem;
         
         &-container {
             position: absolute;
-            top: 5.5rem;
+            top: 7.5rem;
             left: 20rem; 
             z-index: 10;
             background-color: var(--color-primary);
@@ -52,11 +52,7 @@
             padding: 1rem;
             
             @media only screen and (max-width: $bp-medium-570){
-                position: relative;
-                top: 5rem;
-                left: 0; 
-                width: 100%;
-                background-color: var(--color-primary);
+                display: none;
             }
         }
 
@@ -98,7 +94,7 @@
 
         &-icon {
             position: absolute;
-            top: 2.5rem;
+            top: 3.5rem;
             left: 20rem; 
             padding: 0 0 .3rem 0;
             width: 7rem;
@@ -106,9 +102,82 @@
             fill: white;
             stroke: white;
 
-            &:hover {
+            @media only screen and (max-width: $bp-medium-570){
+                position: absolute;
+                top: 3.5rem;
+                left: 40rem; 
+            }
+
+            @media only screen and (max-width: $bp-small-485){
+                position: absolute;
+                top: 3.5rem;
+                left: 34rem; 
+            }
+
+            @media only screen and (max-width: $bp-small){
+                position: absolute;
+                top: 3.5rem;
+                left: 25rem; 
+            }
+
+            &:hover,
+            &:active {
                 cursor: pointer;
             }
+        }
+    }
+}
+
+.phone-burger {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;;
+    background-color: var(--color-primary);
+
+    &-items {
+        width: 100%;
+        padding: 1.5rem 0rem 1rem 3rem;
+        
+        &-container {
+            background-color: var(--color-primary);
+            padding: 1rem;
+
+            @media only screen and (min-width: $bp-medium-570){
+                display: none;
+            }
+        
+        }
+
+        &:hover,
+        &:active {
+            display: block;
+        }
+        
+        & a {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                cursor: pointer;
+                color: white;
+                text-decoration: none;
+            }
+
+            & svg {
+                width: 2rem;
+                height: 2rem;
+                fill: white;
+                stroke: white;
+                margin: 0 1rem 0 0;
+            }
+        }
+        
+        &:hover {
+            background-color: var(--color-grey-light);
+            cursor: pointer;
         }
     }
 }
