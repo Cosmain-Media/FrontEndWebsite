@@ -17,6 +17,7 @@
             margin-left: 3rem;
             color: white;
             text-decoration: none;
+            font-weight: 500;
 
             &:hover {
                 text-decoration: none;
@@ -44,7 +45,7 @@
         
         &-container {
             position: absolute;
-            top: 7.5rem;
+            top: 7rem;
             left: 20rem; 
             z-index: 10;
             background-color: var(--color-primary);
@@ -94,7 +95,7 @@
 
         &-icon {
             position: absolute;
-            top: 3.5rem;
+            top: 3rem;
             left: 20rem; 
             padding: 0 0 .3rem 0;
             width: 7rem;
@@ -104,7 +105,7 @@
 
             @media only screen and (max-width: $bp-medium-570){
                 position: absolute;
-                top: 3.5rem;
+                top: 3rem;
                 left: 40rem; 
             }
 

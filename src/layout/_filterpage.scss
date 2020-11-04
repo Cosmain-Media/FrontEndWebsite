@@ -251,22 +251,6 @@
                 opacity: 0;
             }
         }
-        
-        // &-header-search-input:focus ~ &-header-phone-relatedTags {
-        //     @media only screen and (max-width: $bp-medium-570){
-        //         position: fixed;
-        //         top: 6rem;
-        //         z-index: 2000;
-        //         display: block;
-        //     }
-        // }
-
-        &-header-search-input:focus ~ .list {
-            @media only screen and (max-width: $bp-medium-570){
-                max-height: none;
-                height: 100%;
-            }
-        }
     }
 
     &-footer {
@@ -289,6 +273,13 @@
         background-color: rgba(0, 0, 0, .5);
         box-shadow: 0 0 1px rgba(255, 255, 255, .5);
         }
+}
+
+.filterpage-main-header-search-input.search-dropdown ~ .list {
+    @media only screen and (max-width: $bp-medium-570){
+        max-height: none;
+        height: 100%;
+    }
 }
 
 .filterpage-main-header-search-input.search-dropdown {

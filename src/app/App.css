@@ -46,7 +46,8 @@ body {
     font-size: 3rem;
     margin-left: 3rem;
     color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    font-weight: 500; }
     .nav-logo a:hover {
       text-decoration: none;
       color: white; }
@@ -65,7 +66,7 @@ body {
     padding: .5rem 10rem 1rem 2rem; }
     .burger-items-container {
       position: absolute;
-      top: 7.5rem;
+      top: 7rem;
       left: 20rem;
       z-index: 10;
       background-color: var(--color-primary);
@@ -99,7 +100,7 @@ body {
     margin: 0 0 0 1rem; }
     .burger-menu-icon {
       position: absolute;
-      top: 3.5rem;
+      top: 3rem;
       left: 20rem;
       padding: 0 0 .3rem 0;
       width: 7rem;
@@ -109,7 +110,7 @@ body {
       @media only screen and (max-width: 35.625em) {
         .burger-menu-icon {
           position: absolute;
-          top: 3.5rem;
+          top: 3rem;
           left: 40rem; } }
       @media only screen and (max-width: 30.3125em) {
         .burger-menu-icon {
@@ -558,10 +559,6 @@ li > a:hover {
           background-image: radial-gradient(var(--color-primary), var(--color-grey-light-2));
           transition: all .4s;
           opacity: 0; } }
-    @media only screen and (max-width: 35.625em) {
-      .filterpage-main-header-search-input:focus ~ .list {
-        max-height: none;
-        height: 100%; } }
   .filterpage-footer {
     grid-row: 2/2;
     grid-column: 1/-1; }
@@ -576,6 +573,11 @@ li > a:hover {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+@media only screen and (max-width: 35.625em) {
+  .filterpage-main-header-search-input.search-dropdown ~ .list {
+    max-height: none;
+    height: 100%; } }
 
 @media only screen and (max-width: 35.625em) {
   .filterpage-main-header-search-input.search-dropdown {

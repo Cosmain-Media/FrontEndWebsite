@@ -60,7 +60,7 @@ class FilterPage extends Component {
                             { dynamicTags !== null && dynamicTags.map( (v, i) => (
                                 v.tags.map( (t, i ) => (
                                     <div key={i}>
-                                        { this.state.search === null ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => {getVideos(t); this.handleSearchDropDown();}}>{t}</li> : t.includes(this.state.search)  ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => getVideos(t)}>{t}</li> : null} 
+                                        { this.state.search === null ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => {getVideos(t); this.handleSearchDropDown();}}>{t}</li> : t.includes(this.state.search)  ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => {getVideos(t); this.handleSearchDropDown();}}>{t}</li> : null} 
                                     </div>
                                     
                                 ))                                
@@ -103,21 +103,29 @@ class FilterPage extends Component {
                     </div>
                     <div className="video">
                         <div className="video-container">
-                            <h1 className="video-heading">
-                                Most Popular
-                            </h1>
+                            {this.props.videos.Trending.length > 0 &&
+                                <h1 className="video-heading">
+                                    Most Popular
+                                </h1>
+                            }
                             <VideoLayout videos={this.props.videos.Trending} />
-                            <h1 className="video-heading">
-                                Tutorials
-                            </h1>
+                            {this.props.videos.Tutorial.length > 0 && 
+                                <h1 className="video-heading">
+                                    Tutorials
+                                </h1>
+                            }
                             <VideoLayout videos={this.props.videos.Tutorial} />
-                            <h1 className="video-heading">
-                                Interviews
-                            </h1>
+                            {this.props.videos.Interview.length > 0 && 
+                                <h1 className="video-heading">
+                                    Interviews
+                                </h1>
+                            }
                             <VideoLayout videos={this.props.videos.Interview} />
-                            <h1 className="video-heading">
-                                Blogs
-                            </h1>
+                            {this.props.videos.Blog.length > 0 && 
+                                <h1 className="video-heading">
+                                    Blogs
+                                </h1>
+                            }
                             <VideoLayout videos={this.props.videos.Blog} />
                         </div>
                     </div>

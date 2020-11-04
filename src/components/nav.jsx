@@ -36,9 +36,7 @@ class Nav extends Component {
             <div className="nav">
                 <div className="nav-logo">
                     <Link to="/">
-                        <svg>
-                            <use xlinkHref="/images/sprite.svg#icon-logo"></use>
-                        </svg>
+                        COSMAIN
                     </Link>
                 </div>
                 <div className="nav-menu">
