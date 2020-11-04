@@ -6,7 +6,8 @@ class FilterPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: null
+            search: null,
+            searchDropDown: false
         }
     }
 
@@ -22,6 +23,14 @@ class FilterPage extends Component {
             this.props.searchTags(e, this.state.search)
         }, 300)
     }
+
+    onFocus = () => {
+        this.setState({searchDropDown: true})
+    }
+
+    handleSearchDropDown = () => {
+        this.setState({searchDropDown: false})
+    }
     
     render () {
         const { videos, searchTags, error, tags, getVideos } = this.props
@@ -36,15 +45,27 @@ class FilterPage extends Component {
             <div className="filterpage">
                 <span>{error}</span>
                 <div className="filterpage-main">
-                    <div className="filterpage-main-header">
+                    <div className="filterpage-main-header">                        
                         <h1 className="filterpage-main-header-category">{this.props.currentCategory} Videos</h1>
                         <form className="filterpage-main-header-search" onSubmit={ (e) => { searchTags(e, this.state.search)}}>
-                            <input type="text" className="filterpage-main-header-search-input" placeholder="Search Tags" onChange={this.handleSearch}/>
+                            <input type="text" className={`filterpage-main-header-search-input ${this.state.searchDropDown == true ? `search-dropdown` : ''}`} placeholder="Search Tags" onChange={this.handleSearch} onFocus={this.onFocus}/>
                             <button className="filterpage-main-header-search-button">
                                 <svg className="filterpage-main-header-search-icon">
                                     <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>
                                 </svg>
                             </button>
+                            <div className={`filterpage-main-background ${this.state.searchDropDown == true ? `search-dropdown` : ''}`}>&nbsp;</div>
+                            <ul className={`filterpage-main-header-phone-relatedTags list ${this.state.searchDropDown == true ? `search-dropdown` : ''}`}>
+                            { dynamicTags !== null && <li className="filterpage-main-header-phone-relatedTags-heading">Related Tags</li>}
+                            { dynamicTags !== null && dynamicTags.map( (v, i) => (
+                                v.tags.map( (t, i ) => (
+                                    <div key={i}>
+                                        { this.state.search === null ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => {getVideos(t); this.handleSearchDropDown();}}>{t}</li> : t.includes(this.state.search)  ? <li key={i} className="filterpage-main-header-phone-relatedTags-tags" onClick={ () => getVideos(t)}>{t}</li> : null} 
+                                    </div>
+                                    
+                                ))                                
+                            ))}                            
+                        </ul>
                         </form>
                         <ul className="filterpage-main-header-relatedTags list">
                             { dynamicTags !== null && <li className="filterpage-main-header-relatedTags-heading">Related Tags</li>}

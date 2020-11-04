@@ -106,12 +106,52 @@
                         border: 1px solid transparent;
                         cursor: pointer;
                     }
-
-                    
                     
                 }
 
 
+            }
+
+            &-phone {
+
+                &-relatedTags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 3rem 0;
+                    border-bottom: 1px solid var(--color-grey-light-4);
+                    padding: 0 3rem 2.5rem 0;
+                    align-items: center;
+                    display: none;
+
+                    &-heading {
+                        grid-column: 1/1;
+                        font-size: 1.5rem;
+                        font-weight: 800;
+                        list-style-type: none;
+                        margin-right: 1rem;
+                    }
+    
+                    &-tags {
+                        font-size: 1.6rem;
+                        font-weight: 300;
+                        border: 1px solid var(--color-grey-dark-1);
+                        padding: .2rem 1rem;
+                        margin: .3rem .3rem;
+                        border-radius: 1rem;
+                        transition: all .5s;
+                        list-style-type: none;
+    
+                        &:hover {
+                            color: var(--color-grey-dark-1);
+                            background-color: white;
+                            border: 1px solid transparent;
+                            cursor: pointer;
+                        }
+                        
+                    }
+    
+    
+                }
             }
 
             &-search {
@@ -141,7 +181,7 @@
                         outline: none;
                         width: 85%;
                         background-color: var(--color-grey-light-3);
-                        color: black;
+                        color: black;                        
                     }
         
                     &::-webkit-input-placeholder {
@@ -166,6 +206,10 @@
                     &:active {
                         transform: translateY(.2rem);
                     }
+
+                    @media only screen and (max-width: $bp-medium-570){
+                        display: none;
+                    }
                 }
         
                 &-icon {
@@ -181,6 +225,47 @@
             }
 
             
+        }
+        
+
+        &-background { 
+            height: 6rem;
+            width: 6rem;
+            position: fixed;
+            border-radius: 50%;
+            top: 6.5rem;
+            left: 6.5rem;
+            z-index: -1000;
+            opacity: 0;
+
+            @media only screen and (max-width: $bp-medium-570){
+                height: 6rem;
+                width: 6rem;
+                position: fixed;
+                border-radius: 50%;
+                top: 6.5rem;
+                right: 6.5rem;
+                z-index: -1000;
+                background-image: radial-gradient(var(--color-primary), var(--color-grey-light-2));
+                transition: all .4s;
+                opacity: 0;
+            }
+        }
+        
+        // &-header-search-input:focus ~ &-header-phone-relatedTags {
+        //     @media only screen and (max-width: $bp-medium-570){
+        //         position: fixed;
+        //         top: 6rem;
+        //         z-index: 2000;
+        //         display: block;
+        //     }
+        // }
+
+        &-header-search-input:focus ~ .list {
+            @media only screen and (max-width: $bp-medium-570){
+                max-height: none;
+                height: 100%;
+            }
         }
     }
 
@@ -200,8 +285,34 @@
     }
     
     &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, .5);
-    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+        }
+}
+
+.filterpage-main-header-search-input.search-dropdown {
+    @media only screen and (max-width: $bp-medium-570){
+        width: 80%;
+        position: fixed;
+        top: 2rem;
+        z-index: 2000;
+    }
+}
+
+.filterpage-main-background.search-dropdown {
+    @media only screen and (max-width: $bp-medium-570){
+        opacity: 1;
+        transform: scale(80);
+        z-index: 1000;
+    }
+}
+
+.filterpage-main-header-phone-relatedTags.search-dropdown {
+    @media only screen and (max-width: $bp-medium-570){
+        position: fixed;
+        top: 6rem;
+        z-index: 2000;
+        display: block;
     }
 }
