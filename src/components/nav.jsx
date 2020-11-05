@@ -72,14 +72,14 @@ class Nav extends Component {
                                         <span>Lifestyle</span> 
                                     </Link>
                                 </div>
-                                <div className="burger-items" value="business" onClick={ () => getVideos({query: 'business'})}>
+                                {/* <div className="burger-items" value="business" onClick={ () => getVideos({query: 'business'})}>
                                     <Link to="/">
                                         <svg>
                                             <use xlinkHref="/images/sprite.svg#icon-briefcase"></use>
                                         </svg>
                                         <span>Business</span> 
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                         }                        
                     </div>
