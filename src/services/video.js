@@ -1,13 +1,13 @@
-
-function getVideos(type, profession){
-    const queryParams= '?videoType='+ type + '&profession=' + profession;
-    const apiURL=process.env.apiURL + '/videos';
-    return fetch( apiURL + '/all' + queryParams , {
-        method: 'GET',
-        headers: {'Content-type': 'application/json'},
+import axiosInstance from '../helper/httpInterceptor';
+function getVideos(type, profession) {
+    const queryParams = '?videoType=' + type + '&profession=' + profession;
+    return axiosInstance.get('http://localhost:3001/api/videos/all' + queryParams, {
+        headers: {
+            'Content-type': 'application/json'
+        }
     })
-    .then(response => response.json())
-    .catch(err => console.log(err))
+        .then()
+        .catch(err => console.log(err))
 }
 
 export default getVideos;

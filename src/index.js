@@ -5,9 +5,12 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from '../src/app/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AuthService } from './services/auth';
 
+AuthService.autoAuthUser();
 ReactDOM.render(
-  <Router>
+  
+  <Router >
     <App />
   </Router>,
   document.getElementById('root')

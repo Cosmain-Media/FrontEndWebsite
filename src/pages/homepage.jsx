@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import VideoLayout from '../components/vidLayout';
 import Header from '../components/header'
-
+import {AuthService} from '../services/auth';
 class HomePage extends Component {
     
     render () {
-        console.log("-------homepage----------");
         return (
             <div className="homepage">
                 <div className="headerRow">
@@ -14,7 +13,6 @@ class HomePage extends Component {
                 <div className="video">
                     <div className="video-container">
                         <h1 className="video-heading">
-                            Most Popular
                         </h1>
                         {/* <VideoLayout />
                         <h1 className="video-heading">

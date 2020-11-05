@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import SideNavBar from '../components/sideNavBar';
-import Professional from '../components/professional';
-import Footer from '../components/footer';
-import Carousel from '../components/header'
+import Login from '../components/login';
+import Signup from '../components/signup';
+
 
 class Test extends Component {
+    constructor(props) {
+        super(props);
+
+    }
     render () {
         return (
             <div >
-                <SideNavBar />  
+                <Login history ={this.props.history}/>
             </div>
         )
     }

@@ -5,7 +5,7 @@ class SideNavBar extends Component {
         super(props);
         this.state = {
            navDrop: [true, true, true],
-           beautyCat: ['Barber', 'Cosmetic Doctor', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
+           beautyCat: ['Barber', 'Cosmetic', 'Cosmetic Registered Nurse', 'Cosmetic Surgeon', 'Esthetician', 'Hair Stylist', 'Lash Technician', 'Makeup Artist', 'Nail Artist', 'Piercing Artist', 'Tanning Artist', 'Tattoo Artist'],
            wellCat: ['Acupuncturist', 'Athletic Trainer', 'Chiropractor', 'Dietician', 'Fitness Instructor', 'Life & Wellness Coach', 'Massage Therapist', 'Nutritionist', 'Phsyical Therapist', 'Psychotherapist'],
            popCat: ['Traditional Chinese Acupuncturist', 'Acupuncture', 'Balayage', 'Body Waxing', 'Couples Massage', 'Dermal/Cosmetic Filters', 'Classic Lash Extensions', 'Intense Pulsed Light (IPL)', 'Laser Hair Removal', 'Manicure', 'Microblading', 'Pedicure', 'Personal Training', 'Women\'s Haircuts']
         }
