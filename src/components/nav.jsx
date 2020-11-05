@@ -11,13 +11,14 @@ class Nav extends Component {
     }
 
     burger = React.createRef()
+    navItem = React.createRef()
     
     componentDidMount() {
         document.addEventListener("mousedown", this.onClickOutside);
     }
 
     onClickOutside = event => {
-        if (this.burger.current && !this.burger.current.contains(event.target)) {
+        if (this.burger.current && !this.burger.current.contains(event.target) && this.navItem.current && !this.navItem.current.contains(event.target)) {
             this.setState({
                 navDrop: false
             })
@@ -41,12 +42,12 @@ class Nav extends Component {
                 </div>
                 <div className="nav-menu">
                     <div className="nav-menu-items burger">
-                        <svg ref={this.burger} className="burger-menu burger-menu-icon" onMouseEnter={ (e) => this.navDrop(e)} onClick={ (e) => this.navDrop(e)}>
+                        <svg ref={this.burger} className="burger-menu burger-menu-icon" onClick={ (e) => this.navDrop(e)}>
                             <use xlinkHref="/images/sprite.svg#icon-menu3"></use>
                         </svg>
                         
                         {this.state.navDrop !== false && 
-                            <div className="burger-items-container">
+                            <div ref={this.navItem} className="burger-items-container">
                                 <div className="burger-items" onClick={ () => getVideos({query: 'beauty'})}>
                                     <Link to="/">
                                         <svg>
@@ -86,7 +87,7 @@ class Nav extends Component {
                 </div>
                 {this.state.navDropPhone !== false && 
                     <div className="phone-burger-items-container">
-                        <div className="phone-burger-items" onClick={ () => getVideos({query: 'beauty'})}>
+                        <div ref={this.navItem} className="phone-burger-items" onClick={ () => getVideos({query: 'beauty'})}>
                             <Link to="/">
                                 <svg>
                                     <use xlinkHref="/images/sprite.svg#icon-drop"></use>
@@ -94,7 +95,7 @@ class Nav extends Component {
                                 <span>Beauty</span> 
                             </Link>
                         </div>
-                        <div className="phone-burger-items" onClick={ () => getVideos({query: 'wellness'})}>
+                        <div ref={this.navItem} className="phone-burger-items" onClick={ () => getVideos({query: 'wellness'})}>
                             <Link to="/">
                             <svg>
                                     <use xlinkHref="/images/sprite.svg#icon-slideshare"></use>
@@ -102,7 +103,7 @@ class Nav extends Component {
                                 <span>Wellness</span> 
                             </Link>
                         </div>
-                        <div className="phone-burger-items" value="lifestyle" onClick={ () => getVideos({query: 'lifestyle'})}>
+                        <div ref={this.navItem} className="phone-burger-items" value="lifestyle" onClick={ () => getVideos({query: 'lifestyle'})}>
                             <Link to="/">
                                 <svg>
                                     <use xlinkHref="/images/sprite.svg#icon-archive"></use>
@@ -110,7 +111,7 @@ class Nav extends Component {
                                 <span>Lifestyle</span> 
                             </Link>
                         </div>
-                        <div className="phone-burger-items" value="business" onClick={ () => getVideos({query: 'business'})}>
+                        <div ref={this.navItem} className="phone-burger-items" value="business" onClick={ () => getVideos({query: 'business'})}>
                             <Link to="/">
                                 <svg>
                                     <use xlinkHref="/images/sprite.svg#icon-briefcase"></use>

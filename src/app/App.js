@@ -40,6 +40,7 @@ class App extends Component {
   getVideos = async (category) => {
       // console.log(category)
       const query = typeof category === 'string' ? category : category.query
+      console.log(query)
       for (const type in this.state.videos) {
         var videoReq = await Videos.getVideos(type, query);
         console.log(videoReq)

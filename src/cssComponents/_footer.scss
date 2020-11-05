@@ -1,40 +1,75 @@
-.footer-container{
-    padding-left:35px;
-    font-size: 1.5rem;
+.footer {
     background-color: var(--color-primary);
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 60px 41px;
-    color: white;
+    
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-gap: 4rem;
+        padding: 3rem;
+    }
 
-    &-ul {
-        list-style-type: none;
-        font-size: 1.5rem;
+    &-about {
+        grid-column: 1/-1;
+
+        &-heading {
+            font-size: 3rem;
+        }
+        
+        &-description {
+            font-size: 1.4rem;
+        }
+    }
+
+    &-copyright {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: $bp-medium-570){
+            flex-flow: column;
+        }
+
+        &-links {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            font-size: 1.4rem;
+
+            @media only screen and (max-width: $bp-medium-570){
+                flex-flow: column;
+                justify-content: flex-start;
+                text-align: left;
+            }
+
+            & li {
+                padding: 0 .5rem;
+
+                & a {
+                    text-decoration: none;
+                    color: white;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        &-social-media {
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 2rem;
+
+            & a {
+                padding-right: 1rem;
+            }
+
+            @media only screen and (max-width: $bp-medium-570){
+                justify-content: flex-start;
+                text-align: left;
+                padding-top: 2rem;
+            }
+        }
     }
 }
-
-.footer-container-ul > li {
-    float: left;
-    margin-right: 15px;
-}
-
-li > a{
-    text-decoration: none;
-    color: white;
-}
-
-li > a:hover {
-    color: #ffdd00;
-}
-.social-media-links{
-    font-size: 2.5rem;
-    float:right;
-    cursor: pointer;
-    .media-link{
-        color: white;
-        margin: 0 1rem;
-    }
-}
-

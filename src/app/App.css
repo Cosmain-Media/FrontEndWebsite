@@ -305,38 +305,55 @@ body {
             fill: transparent;
             stroke: white; }
 
-.footer-container {
-  padding-left: 35px;
-  font-size: 1.5rem;
-  background-color: var(--color-primary);
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 60px 41px;
-  color: white; }
-  .footer-container-ul {
-    list-style-type: none;
-    font-size: 1.5rem; }
-
-.footer-container-ul > li {
-  float: left;
-  margin-right: 15px; }
-
-li > a {
-  text-decoration: none;
-  color: white; }
-
-li > a:hover {
-  color: #ffdd00; }
-
-.social-media-links {
-  font-size: 2.5rem;
-  float: right;
-  cursor: pointer; }
-  .social-media-links .media-link {
-    color: white;
-    margin: 0 1rem; }
+.footer {
+  background-color: var(--color-primary); }
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-gap: 4rem;
+    padding: 3rem; }
+  .footer-about {
+    grid-column: 1/-1; }
+    .footer-about-heading {
+      font-size: 3rem; }
+    .footer-about-description {
+      font-size: 1.4rem; }
+  .footer-copyright {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between; }
+    @media only screen and (max-width: 35.625em) {
+      .footer-copyright {
+        flex-flow: column; } }
+    .footer-copyright-links {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      font-size: 1.4rem; }
+      @media only screen and (max-width: 35.625em) {
+        .footer-copyright-links {
+          flex-flow: column;
+          justify-content: flex-start;
+          text-align: left; } }
+      .footer-copyright-links li {
+        padding: 0 .5rem; }
+        .footer-copyright-links li a {
+          text-decoration: none;
+          color: white; }
+          .footer-copyright-links li a:hover {
+            text-decoration: none;
+            color: white; }
+    .footer-copyright-social-media {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 2rem; }
+      .footer-copyright-social-media a {
+        padding-right: 1rem; }
+      @media only screen and (max-width: 35.625em) {
+        .footer-copyright-social-media {
+          justify-content: flex-start;
+          text-align: left;
+          padding-top: 2rem; } }
 
 .profile {
   padding: 2rem 2rem 0 5rem; }
@@ -497,7 +514,7 @@ li > a:hover {
         margin: 2rem 0; }
         .filterpage-main-header-search-input {
           font-family: inherit;
-          font-size: inherit;
+          font-size: 1.6rem;
           color: black;
           background-color: var(--color-grey-light-2);
           width: 20%;
